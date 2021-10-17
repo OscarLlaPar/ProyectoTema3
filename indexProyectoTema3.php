@@ -48,6 +48,31 @@ and open the template in the editor.
                     <td><a href="codigoPHP/ejercicio05.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio05.php">Ver código</a></td>
                 </tr>
+                <tr>
+                    <td>Ejercicio 6 — Operar con fechas: calcular la fecha y el día de la semana de dentro de 60 días</td>
+                    <td><a href="codigoPHP/ejercicio06.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio06.php">Ver código</a></td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 7 — Mostrar el nombre del fichero que se está ejecutando</td>
+                    <td><a href="codigoPHP/ejercicio07.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio07.php">Ver código</a></td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 8 —  Mostrar la dirección IP del equipo desde el que estás accediendo</td>
+                    <td><a href="codigoPHP/ejercicio08.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio08.php">Ver código</a></td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 9 — Mostrar el path donde se encuentra el fichero que se está ejecutando.</td>
+                    <td><a href="codigoPHP/ejercicio09.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio09.php">Ver código</a></td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 10 —  Mostrar el contenido del fichero que se está ejecutando.</td>
+                    <td><a href="codigoPHP/ejercicio10.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio10.php">Ver código</a></td>
+                </tr>
             </table>
         </div>
 			
