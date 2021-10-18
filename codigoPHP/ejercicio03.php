@@ -1,5 +1,7 @@
 <?php
-$fechaHora = new DateTime();
-$zona = new DateTimeZone("Europe/Madrid");
-$fechaHora->setTimezone($zona);
-echo "La fecha y hora en Benavente (España) es: ".$fechaHora->format("d-m-Y h:i:s a");
+//Modo 1
+$oFechaHoraActual = new DateTime();
+$oZona = new DateTimeZone("Europe/Madrid");
+$oFechaHoraActual->setTimezone($oZona);
+echo "La fecha y hora en Benavente (España) es: ".$oFechaHoraActual->format("d-m-Y h:i:s a");
+//Modo 2
