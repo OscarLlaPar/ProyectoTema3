@@ -1,4 +1,6 @@
 <?php
- $timestamp = time();
+ $timestamp = 123456;
+ $oFecha = new DateTime();
+ $oFecha->setTimestamp($timestamp);
  
- echo $timestamp;
+ echo "El timestamp ".$timestamp." equivale a la fecha ".$oFecha->format("d-m-Y h:i:s a");
