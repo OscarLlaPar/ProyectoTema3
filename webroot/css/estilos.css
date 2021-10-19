@@ -42,8 +42,15 @@ p{
         left: 100px;
         
 }
+.cont2{
+    position: relative;
+        width:40%;
+        top: 200px;
+        left: 750px;
+}
 table{
     width:100%;
+    font-size: 12px;
 }
 table,td,tr{
     border: solid white 1px;
@@ -52,7 +59,7 @@ table,td,tr{
 td{
     text-align: left;
     padding: 1px;
-    font-size: 14px;
+    
 }
 footer{
 	background-color: black;

@@ -1,8 +1,7 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+    /*
+    * Ejercicio 11
+    * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+    * Última modificación: 19/10/2021
+    */
+    echo "No disponible.";
