@@ -73,6 +73,16 @@ and open the template in the editor.
                     <td><a href="codigoPHP/ejercicio10.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio10.php">Ver código</a></td>
                 </tr>
+                <tr>
+                    <td>Ejercicio 11 —  Mostrar el documento PHPDoc del proyecto que se está ejecutando generado con PHP Documentor o ApiGen.</td>
+                    <td><a href="codigoPHP/ejercicio11.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio11.php">Ver código</a></td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 12 —  Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach()).</td>
+                    <td><a href="codigoPHP/ejercicio12.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio12.php">Ver código</a></td>
+                </tr>
             </table>
         </div>
 			
