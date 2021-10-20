@@ -43,10 +43,10 @@ p{
         
 }
 .cont2{
-    position: relative;
+    position: absolute;
         width:40%;
         top: 200px;
-        left: 750px;
+        right: 100px;
 }
 table{
     width:100%;

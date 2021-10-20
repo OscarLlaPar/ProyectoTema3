@@ -14,9 +14,11 @@
             */
             $oFechaHora = new DateTime(); //objeto de la fecha
             $oZona = new DateTimeZone("Europe/Lisbon"); //objeto que establece la zona horaria
-            $oFechaHora->setTimezone($zona); //asignación de la zona a la fecha
+            $oFechaHora->setTimezone($oZona); //asignación de la zona a la fecha
+            //setlocale(LC_ALL, 'pt_PT');
             //muestra de la fecha y la hora
-            echo "La fecha y hora en Oporto (Portugal) es: ".$oFechaHora->format("d-m-Y h:i:s a");
+            echo "<p>La fecha y hora en Oporto (Portugal) es: ".$oFechaHora->format("d-m-Y h:i:s a")."</p>";
+            
         ?>
     </body>
 </html>

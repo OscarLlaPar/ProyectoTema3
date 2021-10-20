@@ -23,7 +23,8 @@
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
             * Última modificación: 19/10/2021
             */
-        echo "<h2>Usando foreach</h2>";
+            echo "<h2>Usando foreach</h2>";
+            echo "<h3>Variable \$_SERVER</h3>";
             echo "<table>";
             foreach($_SERVER as $categoria=>$valor){
                 echo "<tr>";
@@ -31,15 +32,10 @@
                 echo "</tr>";
             }
             echo "</table>";
-            echo "<table>";
-            foreach($_GET as $categoria=>$valor){
-                echo "<tr>";
-                echo "<th>".$categoria."</th><td>".$valor."</d>";
-                echo "</tr>";
-            }
-            echo "</table>";
             echo "<h2>Usando print_r()</h2>";
+            echo "<pre>";
             print_r($_SERVER);
+            echo "</pre>";
         ?>
     </body>
 </html>
