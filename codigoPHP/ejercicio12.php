@@ -21,7 +21,7 @@
             /*
             * Ejercicio 12
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 19/10/2021
+            * Última modificación: 20/10/2021
             */
             echo "<h2>Usando foreach</h2>";
             echo "<h3>Variable \$_SERVER</h3>";

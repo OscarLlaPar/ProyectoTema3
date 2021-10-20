@@ -88,16 +88,69 @@ and open the template in the editor.
                     <td><a href="codigoPHP/ejercicio13.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio13.php">Código</a></td>
                 </tr>
+                <tr>
+                    <td>Ejercicio 14 — Comprobar las librerías que estás utilizando en tu entorno de desarrollo y explotación. Crear tu propia librería de funciones y estudiar la
+                     forma de usarla en el entorno de desarrollo y en el de explotación.</td>
+                    <td><a href="codigoPHP/ejercicio14.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio14.php">Código</a></td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 15 — Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la
+                    semana</td>
+                    <td><a href="codigoPHP/ejercicio15.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio15.php">Código</a></td>
+                </tr>
             </table>
             
         </div>
         <div class="cont2">
             <table>
                 <tr>
-                    <td>Ejercicio 14 — Comprobar las librerías que estás utilizando en tu entorno de desarrollo y explotación. Crear tu propia librería de funciones y estudiar la
-                     forma de usarla en el entorno de desarrollo y en el de explotación.</td>
-                    <td><a href="codigoPHP/ejercicio14.php">Ejecutar</a></td>
-                    <td><a href="mostrarcodigo/muestraEjercicio14.php">Código</a></td>
+                    <td>Ejercicio 16 — Recorrer el array anterior utilizando funciones para obtener el mismo resultado.</td>
+                    
+                </tr>
+                <tr>
+                    <td>Ejercicio 17 — Inicializar un array donde almacenamos el nombre de las personas que tienen reservado el
+                    asiento en un teatro de 20 filas y 15 asientos por fila. Recorrer el array con
+                    distintas técnicas para mostrar los asientos ocupados en cada fila y las personas que lo ocupan</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 18 — Recorrer el array anterior utilizando funciones para obtener el mismo resultado</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 19 — Construir una librería de funciones de validación de campos de formularios (LibreríaValidacionFormularios.php) para utilizarla en los
+siguientes ejercicios. Discusión: diferencia entre librería de funciones y clase
+</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 20 — Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php. El profesor facilitará a los alumnos la clase
+AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 21 — Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre
+las preguntas y las respuestas recogidas</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 22 —  Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+recogidas
+</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 23 — Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 24 — . Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las
+respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 25 — Trabajar en PlantillaFormulario.php mi plantilla para hacer formularios como churros</td>
+                </tr>
+                <tr>
+                    <td>Ejercicio 26 —  Probar la plantilla anterior desarrollando un formulario que recoja la temperatura y la presión atmosférica en una serie de fechas y (cuando
+el usuario lo decida) genere un informe con los datos recibidos y un promedios, mínimos y máximos de temperatura y presión atmosférica
+</td>
                 </tr>
             </table>
         </div>		
