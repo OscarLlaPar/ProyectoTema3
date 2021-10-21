@@ -25,10 +25,10 @@ and open the template in the editor.
             /*
             * Ejercicio 14
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 20/10/2021
+            * Última modificación: 21/10/2021
             */
             //declaración e inicialización del array
-            $aSueldoPorDias=array("lunes"=>100, "martes"=>200, "miercoles"=>300, "jueves"=>400, "viernes"=>500, "sabado"=>600, "domingo"=>2);
+            $aSueldoPorDias=array("lunes"=>100.00, "martes"=>200.00, "miercoles"=>300.00, "jueves"=>400.00, "viernes"=>500.00, "sabado"=>600.00, "domingo"=>2.00);
             echo "<h1>Sueldo por días</h1>";
             //tabla para ver datos
             echo "<table>";

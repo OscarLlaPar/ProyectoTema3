@@ -9,8 +9,10 @@
             /*
             * Ejercicio 14
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 20/10/2021
+            * Última modificación: 21/10/2021
             */
+            //inculsión de la librería externa de funciones
+            include "../core/funcionesEjercicio14.php";
             //declaración de variables
             $numero=2;
             $letra="a";
@@ -25,6 +27,8 @@
             }
             echo "<p>$numero + $numero2 = ".sumar($numero, $numero2)."</p>";
             echo "<p>$numero - $numero2 = ".restar($numero, $numero2)."</p>";
+            echo "<p>$numero x $numero2 = ".multiplicar($numero, $numero2)."</p>";
+            echo "<p>$numero / $numero2 = ".dividir($numero, $numero2)."</p>";
             //declaración e inicialización de funciones
             function elDoble($numero){
                 if(is_nan($numero)){
@@ -44,12 +48,7 @@
                 }
                 return resultado;
             }
-            function sumar($numero1, $numero2){
-                return $numero1+$numero2;
-            }
-            function restar($numero1, $numero2){
-                return $numero1-$numero2;
-            }
+            
         ?>
     </body>
 </html>

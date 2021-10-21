@@ -129,11 +129,15 @@ AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de 
                 <tr>
                     <td>Ejercicio 21 — Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre
 las preguntas y las respuestas recogidas</td>
+                    <td><a href="codigoPHP/ejercicio21.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio21.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 22 —  Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
 recogidas
 </td>
+                    <td><a href="codigoPHP/ejercicio22.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio22.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 23 — Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
