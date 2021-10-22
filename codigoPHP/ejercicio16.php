@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>OLP-DWES - Ejercicio 15</title>
+        <title>OLP-DWES - Ejercicio 16</title>
         <style>
             table, td,th{
                 border: solid black 1px;
@@ -21,22 +21,27 @@ and open the template in the editor.
         </style>
     </head>
     <body>
+        
         <?php
             /*
-            * Ejercicio 15
+            * Ejercicio 16
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
             * Última modificación: 21/10/2021
             */
             //declaración e inicialización del array
             $aSueldoPorDias=array("lunes"=>100, "martes"=>200, "miercoles"=>300, "jueves"=>400, "viernes"=>500, "sabado"=>600, "domingo"=>2);
             echo "<h1>Sueldo por días</h1>";
+            echo "<h2>Con funciones</h2>";
             //tabla para ver datos
             echo "<table>";
             //uso del bucle foreach para mostrar el array
-            foreach($aSueldoPorDias as $dia=>$sueldo){
-                echo "<tr>";
-                echo "<th>$dia</th>";
-                printf("<td>%.2f€</td>", $sueldo);
+            echo "<tr>";
+                echo "<th>".key($aSueldoPorDias)."</th>";
+                printf("<td>%.2f€</td>", current($aSueldoPorDias));
+                echo "</tr>";
+            while(next($aSueldoPorDias)){
+                echo "<th>".key($aSueldoPorDias)."</th>";
+                printf("<td>%.2f€</td>", current($aSueldoPorDias));
                 echo "</tr>";
             }
             echo "</table>";

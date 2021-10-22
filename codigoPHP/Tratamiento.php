@@ -13,7 +13,9 @@ and open the template in the editor.
         <h1>Respuestas del formulario</h1>
         <?php
             $nombre = $_REQUEST['nombre'];
-            echo "Nombre: $nombre";
+            $altura = $_REQUEST['altura'];
+            echo "<p>Nombre: $nombre</p>";
+            echo "<p>Altura: $altura</p>";
             echo "<pre>";
             echo "<p>El contenido de \$_REQUEST es: </p>";
             print_r($_REQUEST);

@@ -107,15 +107,20 @@ and open the template in the editor.
             <table>
                 <tr>
                     <td>Ejercicio 16 — Recorrer el array anterior utilizando funciones para obtener el mismo resultado.</td>
-                    
+                    <td><a href="codigoPHP/ejercicio16.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio16.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 17 — Inicializar un array donde almacenamos el nombre de las personas que tienen reservado el
                     asiento en un teatro de 20 filas y 15 asientos por fila. Recorrer el array con
                     distintas técnicas para mostrar los asientos ocupados en cada fila y las personas que lo ocupan</td>
+                    <td><a href="codigoPHP/ejercicio17.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio17.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 18 — Recorrer el array anterior utilizando funciones para obtener el mismo resultado</td>
+                    <td><a href="codigoPHP/ejercicio18.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio18.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 19 — Construir una librería de funciones de validación de campos de formularios (LibreríaValidacionFormularios.php) para utilizarla en los
@@ -142,6 +147,8 @@ recogidas
                 <tr>
                     <td>Ejercicio 23 — Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
 recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente</td>
+                    <td><a href="codigoPHP/ejercicio23.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio23.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 24 — . Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas

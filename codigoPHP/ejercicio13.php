@@ -11,18 +11,21 @@
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
             * Última modificación: 21/10/2021
             */
-            function contadorVisitas()
-            {
-                $fichero=fopen("../tmp/contadorVisitas.txt", "r");
-                if($fichero){
-                    $contador=fread($fichero,filesize($fichero));
-                    $contador=$contador+1;
-                    fclose($fichero);
+            //  La función que ejecutara las visitas
+            function contadorVisitas(){
+                $archivo = "../tmp/contadorVisitas.txt"; //el archivo que contiene en numero
+                $f = fopen($archivo, "r"); //abrimos el archivo en modo de lectura
+                if($f)
+                {
+                    $contador = intval(fread($f, filesize($archivo))); //leemos el archivo
+                    $contador = $contador + 1; //sumamos +1 al contador
+                    fclose($f);
                 }
-                $fichero=fopen("../tmp/contadorVisitas.txt", "w+");
-                if($fichero){
-                    fwrite($fichero,$contador);
-                    fclose($fichero);
+                $f = fopen($archivo, "w+");
+                if($f)
+                {
+                    fwrite($f, $contador);
+                    fclose($f);
                 }
                 return $contador;
             }
