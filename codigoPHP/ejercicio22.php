@@ -9,7 +9,7 @@
             /*
             * Ejercicio 22
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 21/10/2021
+            * Última modificación: 22/10/2021
             */
         
             if(!empty($_REQUEST['enviar'])){    
@@ -20,6 +20,10 @@
                 echo "<pre>";
                 echo "<p>El contenido de \$_REQUEST es: </p>";
                 print_r($_REQUEST);
+                echo "<p>El contenido de \$_POST es: </p>";
+                print_r($_POST);
+                echo "<p>El contenido de \$_GET es: </p>";
+                print_r($_GET);
                 echo "</pre>";
             }
             else{

@@ -10,7 +10,7 @@
             /*
             * Ejercicio 03
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 19/10/2021
+            * Última modificación: 22/10/2021
             */
             //Modo 1
             $oFechaHoraActual = new DateTime(); //objeto de la fecha
@@ -18,7 +18,7 @@
             $oFechaHoraActual->setTimezone($oZona); //asignación de la zona a la fecha
 
             
-            /*Cambio a España (no funciona)*/
+            /*Cambio a España (se tiene que usar strftime())*/
             setlocale(LC_TIME, "es_ES.utf8");
 
             echo "La fecha en Benavente (España) es: ".$oFechaHoraActual->format("d-m-Y").", y la hora es: ".$oFechaHoraActual->format("h:i:s a").". ";

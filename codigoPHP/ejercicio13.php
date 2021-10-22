@@ -9,27 +9,33 @@
             /*
             * Ejercicio 13
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 21/10/2021
+            * Última modificación: 22/10/2021
             */
-            //  La función que ejecutara las visitas
-            function contadorVisitas(){
-                $archivo = "../tmp/contadorVisitas.txt"; //el archivo que contiene en numero
-                $f = fopen($archivo, "r"); //abrimos el archivo en modo de lectura
-                if($f)
-                {
-                    $contador = intval(fread($f, filesize($archivo))); //leemos el archivo
-                    $contador = $contador + 1; //sumamos +1 al contador
-                    fclose($f);
-                }
-                $f = fopen($archivo, "w+");
-                if($f)
-                {
-                    fwrite($f, $contador);
-                    fclose($f);
-                }
-                return $contador;
-            }
-            echo contadorVisitas();
+            // Add correct path to your countlog.txt file.
+            $filename = "../tmp/contadorVisitas.txt";// the text file to store count
+            // Open the file foe reading current count
+            $fp = fopen($filename, 'r');
+
+            //Get exiting count
+            $count = fread($fp, filesize($filename));
+
+            //close file
+            fclose($fp);
+
+            //Add 1 to the existing count
+            $count = $count +1;
+
+            //Display the number of hits
+            echo "<p>$count</p>";
+
+            //Reopen to modify content
+            $fp = fopen($filename, 'w');
+
+            //write the new count to file
+            fwrite($fp, $count);
+
+            //close file
+            fclose($fp);
         ?>
     </body>
 </html>

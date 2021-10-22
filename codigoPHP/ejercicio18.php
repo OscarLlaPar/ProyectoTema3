@@ -26,7 +26,7 @@ and open the template in the editor.
     <body>
         <?php
             /*
-            * Ejercicio 18
+            * Ejercicio 22
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
             * Última modificación: 21/10/2021
             */
@@ -56,16 +56,20 @@ and open the template in the editor.
             echo "<h1>Usando funciones</h1>";
             /*print_r(current($aDistribucionButacas));*/
             echo "<table>";
-            //uso de funciones para mostrar el array
-            foreach($aDistribucionButacas as $fila){
-                echo "<tr>";
-                echo "<th>Fila $contadorFilas</th>";
-                foreach($fila as $persona){
-                    echo "<td>$persona</td>";
+            echo "<tr>";
+                echo "<th>Fila </th>";
+                while($persona = each($aDistribucionButacas[key($aDistribucionButacas)])){
+                    echo "<td>$persona[1]</td>";
                 }
-                
+            echo "</tr>";
+            //uso del while y la función each para mostrar el array
+            while($fila = each($aDistribucionButacas)){
+                echo "<tr>";
+                echo "<th>Fila ".$fila[0]."</th>";
+                while($persona = each($aDistribucionButacas[key($aDistribucionButacas)])){
+                    echo "<td>$persona[1]</td>";
+                }
                 echo "</tr>";
-                $contadorFilas++;
             }
             echo "</table>";
         ?>

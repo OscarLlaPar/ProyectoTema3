@@ -21,12 +21,52 @@
             /*
             * Ejercicio 12
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 20/10/2021
+            * Última modificación: 22/10/2021
             */
             echo "<h2>Usando foreach</h2>";
             echo "<h3>Variable \$_SERVER</h3>";
             echo "<table>";
             foreach($_SERVER as $categoria=>$valor){
+                echo "<tr>";
+                echo "<th>".$categoria."</th><td>".$valor."</d>";
+                echo "</tr>";
+            }
+            echo "</table>";
+            echo "<h3>Variable \$_COOKIE</h3>";
+            echo "<table>";
+            foreach($_COOKIE as $categoria=>$valor){
+                echo "<tr>";
+                echo "<th>".$categoria."</th><td>".$valor."</d>";
+                echo "</tr>";
+            }
+            echo "</table>";
+            echo "<h3>Variable \$_FILES</h3>";
+            echo "<table>";
+            foreach($_FILES as $categoria=>$valor){
+                echo "<tr>";
+                echo "<th>".$categoria."</th><td>".$valor."</d>";
+                echo "</tr>";
+            }
+            echo "</table>";
+            echo "<h3>Variable \$_SESSION</h3>";
+            echo "<table>";
+            foreach($_SESSION as $categoria=>$valor){
+                echo "<tr>";
+                echo "<th>".$categoria."</th><td>".$valor."</d>";
+                echo "</tr>";
+            }
+            echo "</table>";
+            echo "<h3>Variable \$_REQUEST</h3>";
+            echo "<table>";
+            foreach($_REQUEST as $categoria=>$valor){
+                echo "<tr>";
+                echo "<th>".$categoria."</th><td>".$valor."</d>";
+                echo "</tr>";
+            }
+            echo "</table>";
+            echo "<h3>Variable \$_ENV</h3>";
+            echo "<table>";
+            foreach($_ENV as $categoria=>$valor){
                 echo "<tr>";
                 echo "<th>".$categoria."</th><td>".$valor."</d>";
                 echo "</tr>";

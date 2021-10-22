@@ -75,8 +75,6 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td>Ejercicio 11 —  Mostrar el documento PHPDoc del proyecto que se está ejecutando generado con PHP Documentor o ApiGen</td>
-                    <td><a href="codigoPHP/ejercicio11.php">Ejecutar</a></td>
-                    <td><a href="mostrarcodigo/muestraEjercicio11.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 12 —  Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach())</td>
@@ -154,6 +152,8 @@ recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a
                     <td>Ejercicio 24 — . Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
 recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las
 respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas</td>
+                    <td><a href="codigoPHP/ejercicio24.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio24.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 25 — Trabajar en PlantillaFormulario.php mi plantilla para hacer formularios como churros</td>
