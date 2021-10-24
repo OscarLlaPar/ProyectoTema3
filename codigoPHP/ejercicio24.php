@@ -14,10 +14,11 @@ and open the template in the editor.
             /*
             * Ejercicio 24
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 22/10/2021
+            * Última modificación: 24/10/2021
             */
             //Inicialización de variables
             $entradaOK = true; //Inicialización de la variable que nos indica que todo va bien
+            $errores['campoVacio']=null;
             $errores['nombre']=null;
             $errores['altura']=null;
             // Si ya se ha pulsado el boton "Enviar"
@@ -33,6 +34,7 @@ and open the template in the editor.
                     //se crea el mensaje de error
                     $errores['nombre']="El nombre no puede ser un número";
                     $entradaOK = false;
+                    $_REQUEST['nombre']="";
                 }
             
                 //si se ha enviado el formulario con el campo "altura" incorrecto
@@ -64,31 +66,19 @@ and open the template in the editor.
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" value="<?php echo $_REQUEST['nombre'];?>" >
         <?php
-                if (isset($_REQUEST['enviar']) && (empty($_REQUEST['nombre']))) {
-                //se muestra el mensaje de error
-                    echo "<span style=\"color: red\">$errores[campoVacio]</span>";
-                    $_REQUEST['nombre']="";
-                }
-                //si se ha enviado el formulario con el campo "nombre" incorrecto
-                if (isset($_REQUEST['enviar']) && is_numeric($_REQUEST['nombre'])) {
-                    //se muestra el mensaje de error
-                    echo "<span style=\"color: red\">$errores[nombreNumero]</span>";
-                    $_REQUEST['nombre']="";
+                if(!is_null($errores['nombre'])){
+                    echo "<span style=\"color: red\">$errores[nombre]</span>";
                 }
         ?>
                 <br />
                 <label for="altura">Altura (cm):</label>
                 <input type="number" name="altura" value="<?php echo $_REQUEST['altura'];?>" >  
         <?php
-                if (isset($_REQUEST['enviar']) && (empty($_REQUEST['altura']))) {
-                //se muestra el mensaje de error
-                    echo "<span style=\"color: red\">$errores[campoVacio]</span>";
-                    $_REQUEST['altura']="";
+                if(!is_null($errores['altura'])){
+                    echo "<span style=\"color: red\">$errores[altura]</span>";
                 }
-                if (isset($_REQUEST['enviar']) && $_REQUEST['altura']<0){
-                    //se muestra el mensaje de error
-                    echo "<span style=\"color: red\">$errores[alturaNegativa]</span>";
-                    $_REQUEST['altura']="";
+                if(!is_null($errores['campoVacio'])){
+                    echo "<p style=\"color: red\">$errores[campoVacio]</p>";
                 }
         ?>
                 <br />
