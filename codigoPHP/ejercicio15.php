@@ -28,7 +28,15 @@ and open the template in the editor.
             * Última modificación: 21/10/2021
             */
             //declaración e inicialización del array
-            $aSueldoPorDias=array("lunes"=>100, "martes"=>200, "miercoles"=>300, "jueves"=>400, "viernes"=>500, "sabado"=>600, "domingo"=>2);
+            $aSueldoPorDias=[
+                "lunes"=>100, 
+                "martes"=>200, 
+                "miercoles"=>300, 
+                "jueves"=>400, 
+                "viernes"=>500, 
+                "sabado"=>600, 
+                "domingo"=>2
+            ];
             echo "<h1>Sueldo por días</h1>";
             //tabla para ver datos
             echo "<table>";

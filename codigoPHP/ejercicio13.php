@@ -9,33 +9,20 @@
             /*
             * Ejercicio 13
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 22/10/2021
+            * Última modificación: 25/10/2021
             */
-            // Add correct path to your countlog.txt file.
-            $filename = "../tmp/contadorVisitas.txt";// the text file to store count
-            // Open the file foe reading current count
-            $fp = fopen($filename, 'r');
-
-            //Get exiting count
-            $count = fread($fp, filesize($filename));
-
-            //close file
-            fclose($fp);
-
-            //Add 1 to the existing count
-            $count = $count +1;
-
-            //Display the number of hits
-            echo "<p>$count</p>";
-
-            //Reopen to modify content
-            $fp = fopen($filename, 'w');
-
-            //write the new count to file
-            fwrite($fp, $count);
-
-            //close file
-            fclose($fp);
+            session_start();  //inicia una sesión
+            //se crea un contador en $_SESSION en caso de que no esté creado, sería la visita número uno
+            if ( !isset( $_SESSION['contador'] ) ){ 
+            $_SESSION['contador'] = 1;
+            
+            }
+            //si no es la visita número uno, será la siguiente, y la siguiente, y la siguiente...
+            else {
+            $_SESSION['contador']++;
+            }
+            //muestra por pantalla
+            echo "Esta página ha sido visitada ".$_SESSION['contador']." veces";
         ?>
     </body>
 </html>
