@@ -16,39 +16,31 @@ and open the template in the editor.
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
             * Última modificación: 24/10/2021
             */
+            include "../core/210322ValidacionFormularios.php";
             //Inicialización de variables
             $entradaOK = true; //Inicialización de la variable que nos indica que todo va bien
-            $errores['campoVacio']=null;
-            $errores['nombre']=null;
-            $errores['altura']=null;
+            $aErrores = [
+                'nombre'=>null,
+                'altura'=>null
+            ];
             // Si ya se ha pulsado el boton "Enviar"
             if(!empty($_REQUEST['enviar'])){
-                //si se ha enviado el formulario con algún campo vacío
-                if (empty($_REQUEST['nombre'])||empty($_REQUEST['altura'])) {
-                //se crea el mensaje de error
-                    $errores["campoVacio"]="El campo tiene que estar rellenado";
-                    $entradaOK = false;
+                $aErrores['nombre']= validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'],30,2,1);
+                if(($aErrores['nombre'])!=null){
+                    $_REQUEST[nombre]="";
+                    $entradaOK=false;
                 }
-                //si se ha enviado el formulario con el campo "nombre" incorrecto
-                if (is_numeric($_REQUEST['nombre'])) {
-                    //se crea el mensaje de error
-                    $errores['nombre']="El nombre no puede ser un número";
-                    $entradaOK = false;
-                    $_REQUEST['nombre']="";
-                }
-            
-                //si se ha enviado el formulario con el campo "altura" incorrecto
-                if ($_REQUEST['altura']<0){
-                    //se crea el mensaje de error
-                    $errores['altura']="La altura no puede ser un número negativo";
-                    $entradaOK = false;
-                    $_REQUEST['altura']="";
+                $aErrores['altura']= validacionFormularios::comprobarEntero($_REQUEST['altura'],300,0,1);
+                if(($aErrores['altura'])!=null){
+                    $_REQUEST[altura]="";
+                    $entradaOK=false;
                 }
             }
             // Si no se ha enviado el formulario (= es la primera vez)
             else{
                 $entradaOK=false;
             }
+            // Si no hay errores
             if($entradaOK){
                 //Tratamiento del formulario
                 //recogida de valores
@@ -59,6 +51,7 @@ and open the template in the editor.
                 echo "<p>Nombre: $nombre</p>";
                 echo "<p>Altura: $altura</p>";
             }
+            // Si hay errores (o es la primera vez)
             else{
         ?>
                 <h1>Formulario del ejercicio 24</h1>
@@ -66,19 +59,19 @@ and open the template in the editor.
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" value="<?php echo $_REQUEST['nombre'];?>" >
         <?php
-                if(!is_null($errores['nombre'])){
-                    echo "<span style=\"color: red\">$errores[nombre]</span>";
+                if(!is_null($aErrores['nombre'])){
+                    echo "<span style=\"color: red\">$aErrores[nombre]</span>";
                 }
         ?>
                 <br />
                 <label for="altura">Altura (cm):</label>
                 <input type="number" name="altura" value="<?php echo $_REQUEST['altura'];?>" >  
         <?php
-                if(!is_null($errores['altura'])){
-                    echo "<span style=\"color: red\">$errores[altura]</span>";
+                if(!is_null($aErrores['altura'])){
+                    echo "<span style=\"color: red\">$aErrores[altura]</span>";
                 }
-                if(!is_null($errores['campoVacio'])){
-                    echo "<p style=\"color: red\">$errores[campoVacio]</p>";
+                if(!is_null($aErrores['campoVacio'])){
+                    echo "<p style=\"color: red\">$aErrores[campoVacio]</p>";
                 }
         ?>
                 <br />

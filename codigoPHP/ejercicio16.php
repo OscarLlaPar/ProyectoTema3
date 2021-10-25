@@ -37,11 +37,12 @@ and open the template in the editor.
             //tabla para ver datos
             echo "<table>";
             //uso del while y la función each para mostrar el array
-            while($sueldo = each($aSueldoPorDias)){
+            while(current($aSueldoPorDias)!=null){
                 echo "<tr>";
-                echo "<th>".$sueldo[0]."</th>";
-                printf("<td>%.2f€</td>", $sueldo[1]);
+                echo "<th>". key($aSueldoPorDias)."</th>";
+                printf("<td>%.2f€</td>", current($aSueldoPorDias));
                 echo "</tr>";
+                next($aSueldoPorDias);
             }
             echo "</table>";
         ?>

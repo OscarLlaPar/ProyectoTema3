@@ -122,36 +122,38 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td>Ejercicio 19 — Construir una librería de funciones de validación de campos de formularios (LibreríaValidacionFormularios.php) para utilizarla en los
-siguientes ejercicios. Discusión: diferencia entre librería de funciones y clase
-</td>
+                    siguientes ejercicios. Discusión: diferencia entre librería de funciones y clase
+                    </td>
+                    <td><a href="codigoPHP/ejercicio19.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio19.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 20 — Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php. El profesor facilitará a los alumnos la clase
-AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida</td>
+                    AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida</td>
                 </tr>
                 <tr>
                     <td>Ejercicio 21 — Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre
-las preguntas y las respuestas recogidas</td>
+                    las preguntas y las respuestas recogidas</td>
                     <td><a href="codigoPHP/ejercicio21.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio21.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 22 —  Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
-recogidas
-</td>
+                    recogidas
+                    </td>
                     <td><a href="codigoPHP/ejercicio22.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio22.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 23 — Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
-recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente</td>
+                    recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente</td>
                     <td><a href="codigoPHP/ejercicio23.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio23.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 24 — . Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
-recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las
-respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas</td>
+                    recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las
+                    respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas</td>
                     <td><a href="codigoPHP/ejercicio24.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio24.php">Código</a></td>
                 </tr>
@@ -160,8 +162,8 @@ respuestas que habíamos tecleado correctamente aparecerán en el formulario y n
                 </tr>
                 <tr>
                     <td>Ejercicio 26 —  Probar la plantilla anterior desarrollando un formulario que recoja la temperatura y la presión atmosférica en una serie de fechas y (cuando
-el usuario lo decida) genere un informe con los datos recibidos y un promedios, mínimos y máximos de temperatura y presión atmosférica
-</td>
+                    el usuario lo decida) genere un informe con los datos recibidos y un promedios, mínimos y máximos de temperatura y presión atmosférica
+                    </td>
                 </tr>
             </table>
         </div>		
