@@ -8,6 +8,68 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>OLP-DWES - Ejercicio 24</title>
+        <style>
+            body{
+                background-color: black;
+                color: white;
+                font-family: Calibri, sans-serif;
+                text-align: center;
+            }
+            button, input{
+                font-family : inherit;
+                font-size   : 100%;
+              }
+            h1{
+                margin-top:25px;
+                bargin-botton: 30px;
+            }
+            .contenedor{
+                position: absolute;
+                border: solid white 1px;
+                width: 30%;
+                height: 50%;
+                left:35%;
+                top: 20%;
+            }
+            footer{
+                background-color: black;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 12px;
+                position: absolute;
+                top: 90%;
+                bottom: 0%;
+                width: 99%;
+                height: 100px;
+                text-align: left;
+                border-top: solid white 1px;
+            }
+            img{
+                height: 20px;
+		width: 20px;
+            }
+            form{
+                position:absolute;
+                left:14.5%;
+            }
+            .item{
+                margin:10px;
+                height:40px;
+            }
+            #enviar{
+                height: 75px;
+                width: 200px;
+                font-size: 24px;
+                
+            }
+            input{
+                background-color: black;
+                color: white;
+                border-bottom: solid white 1px;
+            }
+            p{
+                margin:0;
+            }
+        </style>
     </head>
     <body>
         <?php
@@ -23,17 +85,25 @@ and open the template in the editor.
                 'nombre'=>null,
                 'altura'=>null
             ];
+            $aRespuestas = [
+                'nombre'=>null,
+                'altura'=>null
+            ];
             // Si ya se ha pulsado el boton "Enviar"
             if(!empty($_REQUEST['enviar'])){
+                //realizar las validaciones. Si la respuesta está mal, la función carga la variable con un mensaje de error
+                //si no, se queda vacía
                 $aErrores['nombre']= validacionFormularios::comprobarAlfabetico($_REQUEST['nombre'],30,2,1);
-                if(($aErrores['nombre'])!=null){
-                    $_REQUEST[nombre]="";
-                    $entradaOK=false;
-                }
+                
                 $aErrores['altura']= validacionFormularios::comprobarEntero($_REQUEST['altura'],300,0,1);
-                if(($aErrores['altura'])!=null){
-                    $_REQUEST[altura]="";
-                    $entradaOK=false;
+                //acciones correspondientes en caso de que haya algún error
+                foreach($aErrores as $error){
+                    //condición de que hay un error
+                    if($error!=null){
+                        //limpieza del campo para cuando vuelva a aparecer el formulario
+                        $_REQUEST[key($error)]="";
+                        $entradaOK=false;
+                    }
                 }
             }
             // Si no se ha enviado el formulario (= es la primera vez)
@@ -44,39 +114,55 @@ and open the template in the editor.
             if($entradaOK){
                 //Tratamiento del formulario
                 //recogida de valores
-                $nombre = $_REQUEST['nombre'];
-                $altura = $_REQUEST['altura'];
+                $aRespuestas['nombre'] = $_REQUEST['nombre'];
+                $aRespuestas['altura'] = $_REQUEST['altura'];
                 //muestra de valores por pantalla
                 echo "<h1>Datos enviados</h1>";
-                echo "<p>Nombre: $nombre</p>";
-                echo "<p>Altura: $altura</p>";
+                echo "<p>Nombre:".$aRespuestas['nombre']."</p>";
+                echo "<p>Altura:".$aRespuestas['altura']."</p>";
             }
             // Si hay errores (o es la primera vez)
             else{
         ?>
-                <h1>Formulario del ejercicio 24</h1>
-                <form name="ejercicio24" action="ejercicio24.php" method="post">
-                <label for="nombre">Nombre:</label>
-                <input type="text" name="nombre" value="<?php echo $_REQUEST['nombre'];?>" >
+                <div class="contenedor">
+                    <h1>Formulario del ejercicio 24</h1>
+                    <form name="ejercicio24" action="ejercicio24.php" method="post">
+                        <div class="item">
+                            <label for="nombre">Nombre<span style="color:red">*</span>:</label><br>
+                            <input id="nombre" type="text" name="nombre" value="<?php echo $_REQUEST['nombre'];?>" >
         <?php
                 if(!is_null($aErrores['nombre'])){
-                    echo "<span style=\"color: red\">$aErrores[nombre]</span>";
+                    echo "<p style=\"color: red\">$aErrores[nombre]</p>";
                 }
-        ?>
-                <br />
-                <label for="altura">Altura (cm):</label>
-                <input type="number" name="altura" value="<?php echo $_REQUEST['altura'];?>" >  
+        ?>              
+                        </div>
+                        <br />
+                        <div class="item">
+                        <label for="altura">Altura (cm)<span style="color:red">*</span>:</label><br>
+                        <input id="altura" type="text" name="altura" value="<?php echo $_REQUEST['altura'];?>" >  
         <?php
                 if(!is_null($aErrores['altura'])){
-                    echo "<span style=\"color: red\">$aErrores[altura]</span>";
-                }
-                if(!is_null($aErrores['campoVacio'])){
-                    echo "<p style=\"color: red\">$aErrores[campoVacio]</p>";
+                    echo "<p style=\"color: red\">$aErrores[altura]</p>";
                 }
         ?>
-                <br />
-                <input type="submit" value="Enviar" name="enviar"/>
-                </form>
+                        </div>
+                        <br />
+                        <input id="enviar" type="submit" value="Enviar" name="enviar"/>
+                    </form>
+                </div>
+                <footer>
+                <p>
+                    Óscar Llamas Parra
+                                <a href="https://github.com/OscarLlaPar/" target="__blank"><img src="../webroot/img/github.png" alt="Github"></img></a>
+                </p>
+                <p>
+                    DAW 2
+                </p>
+                <p>
+                    IES Los Sauces, Benavente 2021-2022
+                </p>
+                <div class="cuadro" id="abajo"></div>
+                </footer>
         <?php       
             }
         ?>
