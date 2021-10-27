@@ -47,6 +47,21 @@ and open the template in the editor.
                 height: 20px;
 		width: 20px;
             }
+            span{
+                font-size:14px;
+            }
+            legend{
+                background-color: white;
+                color: black;
+                border-radius: 5px;
+                padding: 1px;
+                font-weight: bold;
+                width: 125px;
+                height:20px;
+            }
+            fieldset{
+                background-color: #101010;
+            }
             /*form{
                 position:absolute;
                 left:10%;
@@ -56,30 +71,40 @@ and open the template in the editor.
                 margin:10px;
                 height:40px;
             }*/
+            
+            input{
+                background-color: #101010;
+                color: white;
+                border:none;
+                border-bottom: solid white 1px;
+            }
             #enviar{
+                border: solid white 1px;
                 margin-top: 25px;
                 margin-left: 10px;
                 margin-bottom: 30px;
+                width: 100px;
+                height: 25px;
+                font-size:20px;
                 
                 
             }
-            input{
-                background-color: black;
-                color: white;
-                border-bottom: solid white 1px;
+            #enviar:hover{
+                background-color: white;
+                color:black;
             }
             .cont{
                 border: solid white 1px;
                 position: relative;
-                width:30%;
-                left:35%;
+                width:40%;
+                left:30%;
                 margin-top: 50px;
                 margin-bottom: 300px;
             }
-            .cont h1{
+            h1{
                 text-align: center;
             }
-            .respuestas, .respuestas td{
+            .respuestas, .respuestas td, .respuestas th{
                 border: solid white 1px;
                 border-collapse: collapse;
             }
@@ -95,6 +120,15 @@ and open the template in the editor.
             th,td{
                 padding: 5px;
             }
+            td{
+                width: 33.33%;
+            }
+            textarea{
+                background-color: black;
+                color: white;
+                border:none;
+                border: solid white 1px;
+            }
         </style>
     </head>
     <body>
@@ -102,7 +136,7 @@ and open the template in the editor.
             /*
             * Ejercicio 24
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 24/10/2021
+            * Última modificación: 27/10/2021
             */
             /*
             Tipos de entrada - posible orden:
@@ -141,8 +175,8 @@ and open the template in the editor.
                 'email'=>null,
                 'fechahoracomienzo'=>null,
                 'comentarios'=>null,
-                'ciclo'=>null,
-                'modulos'=>null
+                'ciclo'=>null/*,
+                'modulos'=>null*/
             ];
             $aRespuestas = [
                 'nombre'=>null,
@@ -157,8 +191,8 @@ and open the template in the editor.
                 'email'=>null,
                 'fechahoracomienzo'=>null,
                 'comentarios'=>null,
-                'ciclo'=>null,
-                'modulos'=>null
+                'ciclo'=>null/*,
+                'modulos'=>null*/
             ];
             // Si ya se ha pulsado el boton "Enviar"
             if(!empty($_REQUEST['enviar'])){
@@ -190,9 +224,9 @@ and open the template in the editor.
                 
                 $aErrores['comentarios']= validacionFormularios::comprobarNoVacio($_REQUEST['comentarios']);
                 
-                /*$aErrores['ciclo']= validacionFormularios::validarElementoEnLista($_REQUEST['ciclo'],$aOpciones=['DAW1','DAW2']);
+                $aErrores['ciclo']= validacionFormularios::validarElementoEnLista($_REQUEST['ciclo'],$aOpciones=['DAW1','DAW2']);
                 
-                $aErrores['modulos']= validacionFormularios::validarElementoEnLista($_REQUEST['modulos'],$aOpciones=[
+                /*$aErrores['modulos']= validacionFormularios::validarElementoEnLista($_REQUEST['modulos'],$aOpciones=[
                     'Entornos de desarrollo',
                     'Sistemas Informáticos',
                     'Programación',
@@ -227,15 +261,15 @@ and open the template in the editor.
                 $aRespuestas['dni'] = $_REQUEST['dni'];
                 $aRespuestas['notamedia'] = $_REQUEST['notamedia'];
                 $aRespuestas['altura'] = $_REQUEST['altura'];
-                $aRespuestas['fechanacimiento'] = $_REQUEST['fechanacimieno'];
+                $aRespuestas['fechanacimiento'] = $_REQUEST['fechanacimiento'];
                 $aRespuestas['telefono'] = $_REQUEST['telefono'];
                 $aRespuestas['codigopostal'] = $_REQUEST['codigopostal'];
                 $aRespuestas['sitioweb'] = $_REQUEST['sitioweb'];
                 $aRespuestas['email'] = $_REQUEST['email'];
                 $aRespuestas['fechahoracomienzo'] = $_REQUEST['fechahoracomienzo'];
                 $aRespuestas['comentarios'] = $_REQUEST['comentarios'];
-                /*$aRespuestas['ciclo'] = $_REQUEST['ciclo'];
-                $aRespuestas['modulos'] = $_REQUEST['modulos'];*/
+                $aRespuestas['ciclo'] = $_REQUEST['ciclo'];
+                /*$aRespuestas['modulos'] = $_REQUEST['modulos'];*/
                 //muestra de valores por pantalla
                 echo "<div class=\"cont\">";
                 echo "<h1 style=\"color:green\">Datos enviados</h1>";
@@ -315,7 +349,7 @@ and open the template in the editor.
                                 </td>  
                                     <td>
                                 
-                                <input id="altura" type="number" name="altura" value="<?php echo (isset($_REQUEST['altura']))?$_REQUEST['altura']:"";?>" > 
+                                <input id="altura" type="text" name="altura" value="<?php echo (isset($_REQUEST['altura']))?$_REQUEST['altura']:"";?>" > 
                                 
         <?php
                 echo (!is_null($aErrores['altura']))?"<span style=\"color: red\">$aErrores[altura]</span>":"";
@@ -333,62 +367,91 @@ and open the template in the editor.
                         </fieldset>
                         <fieldset>
                             <legend>Contacto:</legend>
-                                <label for="telefono">Teléfono<span style="color:red">*</span>:</label><br>
-                                <input id="telefono" type="tel" name="telefono" value="<?php echo (isset($_REQUEST['telefono']))?$_REQUEST['telefono']:"";?>" >
+                            <table>
+                                <tr>
+                                    <td><label for="telefono">Teléfono<span style="color:red">*</span>:</label></td>
+                                    <td><label for="codigopostal">Código Postal<span style="color:red">*</span>:</label></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input id="telefono" type="tel" name="telefono" value="<?php echo (isset($_REQUEST['telefono']))?$_REQUEST['telefono']:"";?>" >
         <?php
                 echo (!is_null($aErrores['telefono']))?"<span style=\"color: red\">$aErrores[telefono]</span>":"";
         ?>
-                                <br>
-                                <label for="codigopostal">Código Postal<span style="color:red">*</span>:</label><br>
-                                <input id="codigopostal" type="number" name="codigopostal" value="<?php echo (isset($_REQUEST['codigopostal']))?$_REQUEST['codigopostal']:"";?>" >
+                                    </td>
+                                    <td>
+                                        <input id="codigopostal" type="text" name="codigopostal" value="<?php echo (isset($_REQUEST['codigopostal']))?$_REQUEST['codigopostal']:"";?>" >
         <?php
                 echo (!is_null($aErrores['codigopostal']))?"<span style=\"color: red\">$aErrores[codigopostal]</span>":"";
         ?>    
-                                <br>
-                                <label for="sitioweb">Sitio web<span style="color:red">*</span>:</label><br>
-                                <input id="sitioweb" type="text" name="sitioweb" value="<?php echo (isset($_REQUEST['sitioweb']))?$_REQUEST['sitioweb']:"";?>" >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="sitioweb">Sitio web<span style="color:red">*</span>:</label></td>
+                                    <td><label for="email">E-mail<span style="color:red">*</span>:</label></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input id="sitioweb" type="text" name="sitioweb" value="<?php echo (isset($_REQUEST['sitioweb']))?$_REQUEST['sitioweb']:"";?>" >
         <?php
                 echo (!is_null($aErrores['sitioweb']))?"<span style=\"color: red\">$aErrores[sitioweb]</span>":"";
         ?>   
-                                <br>
-                                <label for="email">E-mail<span style="color:red">*</span>:</label><br>
-                                <input id="email" type="text" name="email" value="<?php echo (isset($_REQUEST['email']))?$_REQUEST['email']:"";?>" >
+                                    </td>
+                                    <td>
+                                        <input id="email" type="text" name="email" value="<?php echo (isset($_REQUEST['email']))?$_REQUEST['email']:"";?>" >
         <?php
                 echo (!is_null($aErrores['email']))?"<span style=\"color: red\">$aErrores[email]</span>":"";
         ?>   
+                                    </td>
+                                </tr>
+                            </table>
                         </fieldset>
                         <fieldset>
                             <legend>Curso:</legend>
-                                <label for="fechahoracomienzo">Fecha y hora de comienzo del curso<span style="color:red">*</span>:</label><br>
-                                <input id="fechahoracomienzo" type="datetime-local" name="fechahoracomienzo" value="<?php echo (isset($_REQUEST['fechahoracomienzo']))?$_REQUEST['fechahoracomienzo']:"";?>" >
+                            <table>
+                                <tr>
+                                    <td><label for="fechahoracomienzo">Fecha y hora de comienzo del curso<span style="color:red">*</span>:</label></td>
+                                    <td><label for="ciclo">Ciclo<span style="color:red">*</span>:</label></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input id="fechahoracomienzo" type="datetime-local" name="fechahoracomienzo" value="<?php echo (isset($_REQUEST['fechahoracomienzo']))?$_REQUEST['fechahoracomienzo']:"";?>" >
         <?php
                 echo (!is_null($aErrores['fechahoracomienzo']))?"<span style=\"color: red\">$aErrores[fechahoracomienzo]</span>":"";
         ?> 
-                                <br>
-                                <label for="ciclo">Ciclo<span style="color:red">*</span>:</label><br>
-                                <input id="DAW1" type="radio" name="ciclo" value="DAW1" 
+                                    </td>
+                                    <td>
+                                        <input id="DAW1" type="radio" name="ciclo" value="DAW1" 
                                 <?php 
                                     echo ($_REQUEST['ciclo']==='DAW1')?"checked":"";
                                     
                                 ?>>
-                                <label for="DAW1">DAW1</label><br>
+                                    <label for="DAW1">DAW1</label><br>
                                 
-                                <input id="DAW2" type="radio" name="ciclo" value="DAW2" 
+                                    <input id="DAW2" type="radio" name="ciclo" value="DAW2" 
                                 <?php 
                                     echo ($_REQUEST['ciclo']==='DAW2')?"checked":"";
                                 ?>>
-                                <label for="DAW2">DAW2</label><br>
+                                    <label for="DAW2">DAW2</label><br>
         <?php                   
                 echo (!is_null($aErrores['ciclo']))?"<span style=\"color: red\">$aErrores[ciclo]</span>":"";
         ?>
-                                <br>
-                                <label for="comentarios">Comentarios<span style="color:red">*</span>:</label><br>
-                                <textarea id="comentarios" name="comentarios"><?php echo (isset($_REQUEST['comentarios']))?$_REQUEST['comentarios']:"";?></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <label for="comentarios">Comentarios<span style="color:red">*</span>:</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <textarea id="comentarios" name="comentarios" cols="80" rows="5"><?php echo (isset($_REQUEST['comentarios']))?$_REQUEST['comentarios']:"";?></textarea>
         <?php
                 echo (!is_null($aErrores['comentarios']))?"<span style=\"color: red\">$aErrores[comentarios]</span>":"";
         ?> 
-                                
-                                <br>
+                                    </td>
+                                </tr>
+                            </table>
         <?php
                 echo (!is_null($aErrores['modulos']))?"<span style=\"color: red\">$aErrores[comentarios]</span>":"";
         ?>                            

@@ -16,6 +16,7 @@ and open the template in the editor.
                 <h2>Tema 3</h2>
                 <div class="cuadro" id="arriba"></div>
             </div>
+        <div class="big">
         <div class="cont">
             <table>
                 <tr>
@@ -98,16 +99,17 @@ and open the template in the editor.
                     <td><a href="codigoPHP/ejercicio15.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio15.php">Código</a></td>
                 </tr>
-            </table>
-            
-        </div>
-        <div class="cont2">
-            <table>
                 <tr>
                     <td>Ejercicio 16 — Recorrer el array anterior utilizando funciones para obtener el mismo resultado.</td>
                     <td><a href="codigoPHP/ejercicio16.php">Ejecutar</a></td>
                     <td><a href="mostrarcodigo/muestraEjercicio16.php">Código</a></td>
                 </tr>
+            </table>
+            
+        </div>
+        <div class="cont2">
+            <table>
+                
                 <tr>
                     <td>Ejercicio 17 — Inicializar un array donde almacenamos el nombre de las personas que tienen reservado el
                     asiento en un teatro de 20 filas y 15 asientos por fila. Recorrer el array con
@@ -166,7 +168,8 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
-        </div>		
+        </div>	
+        </div>
     </body>
     <footer>
         <p>
