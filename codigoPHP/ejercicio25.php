@@ -8,6 +8,77 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>OLP-DWES - Ejercicio 25</title>
+        <style>
+            body{
+                background-color:#202020;
+                color: white;
+                font-family: Roboto, sans-serif;
+                font-size:16px;
+            }
+            fieldset{
+                background-color:#444444;
+                border-radius: 10px;
+                margin:0;
+            }
+            legend{
+                margin:0;
+                font-weight:bold;
+                background-color: darkorchid;
+                border: solid #AAAAAA 2px;
+                border-radius: 5px;
+                padding:5px;
+                font-size:20px;
+            }
+            h1{
+                text-align: center;
+            }
+            input, label, select, textarea{
+                margin:5px 5px 5px 30px;
+            }
+            input[type=text]{
+                background-color: inherit;
+                border: none;
+                border-bottom: solid white 2px;
+                color: white;
+                font-size:16px;
+                padding: 5px;
+            }
+            footer{
+                font-size:14px;
+                background-color: #333333;
+                color:#AAAAAA;
+                border-top: solid #AAAAAA 1px;
+                width: 100%;
+                margin:0;
+                margin-top:20px;
+                padding-bottom:20px;
+                
+            }
+            #enviar, #vaciar{
+                background-color: #202020;
+                color:white;
+                width: 100px;
+                height: 50px;
+                border: solid white 2px;
+                margin:30px 0px 10px 50px;
+            }
+            #enviar:hover{
+                background-color:darkorchid;
+            }
+            #vaciar:hover{
+                background-color:hotpink;
+            }
+            .contenedor{
+                margin:0;
+                padding:0;
+            }
+            .titulo{
+                background-color: #333333;
+                border-bottom: solid #AAAAAA 1px;
+                margin-bottom: 20px;
+                padding:0;
+            }
+        </style>
     </head>
     <body>
         <?php
@@ -166,10 +237,12 @@ and open the template in the editor.
             else{
         ?>
                 <div class="contenedor">
-                    <h1>Plantilla de formularios</h1>
+                    <div class="titulo">
+                        <h1>Plantilla de formularios</h1>
+                    </div>
                     <form name="ejercicio25" action="ejercicio25.php" method="post">
                         <fieldset>
-                            <legend>Obligatorios: </legend>
+                            <legend>Título: </legend>
                                     
                                     
                                     <label for="alfabeticoObligatorio">Alfabético obligatorio<span style="color:red">*</span>:</label>
@@ -205,7 +278,7 @@ and open the template in the editor.
         ?>
                                         <br>
                                         <label for="numericoObligatorio">Numérico obligatorio<span style="color:red">*</span>:</label>       
-                                        <input id="numericoObligatorio" type="number" name="numericoObligatorio" value="<?php echo (isset($_REQUEST['numericoObligatorio']))?$_REQUEST['numericoObligatorio']:"";?>" > 
+                                        <input id="numericoObligatorio" type="text" name="numericoObligatorio" value="<?php echo (isset($_REQUEST['numericoObligatorio']))?$_REQUEST['numericoObligatorio']:"";?>" > 
                                 
         <?php
                 echo (!is_null($aErrores['numericoObligatorio']))?"<span style=\"color: red\">$aErrores[numericoObligatorio]</span>":"";
@@ -220,13 +293,13 @@ and open the template in the editor.
                               
                                         <br>
                                 <label for="telefonoObligatorio">Teléfono obligatorio<span style="color:red">*</span>:</label>
-                                <input id="telefonoObligatorio" type="tel" name="telefonoObligatorio" value="<?php echo (isset($_REQUEST['telefonoObligatorio']))?$_REQUEST['telefonoObligatorio']:"";?>" >
+                                <input id="telefonoObligatorio" type="text" name="telefonoObligatorio" value="<?php echo (isset($_REQUEST['telefonoObligatorio']))?$_REQUEST['telefonoObligatorio']:"";?>" >
         <?php
                 echo (!is_null($aErrores['telefonoObligatorio']))?"<span style=\"color: red\">$aErrores[telefonoObligatorio]</span>":"";
         ?>
                                 <br>
                                 <label for="codigopostalObligatorio">Código postal obligatorio<span style="color:red">*</span>:</label>
-                                <input id="codigopostalObligatorio" type="number" name="codigopostalObligatorio" value="<?php echo (isset($_REQUEST['codigopostalObligatorio']))?$_REQUEST['codigopostalObligatorio']:"";?>" >
+                                <input id="codigopostalObligatorio" type="text" name="codigopostalObligatorio" value="<?php echo (isset($_REQUEST['codigopostalObligatorio']))?$_REQUEST['codigopostalObligatorio']:"";?>" >
         <?php
                 echo (!is_null($aErrores['codigopostalObligatorio']))?"<span style=\"color: red\">$aErrores[codigopostalObligatorio]</span>":"";
         ?>    
@@ -289,16 +362,22 @@ and open the template in the editor.
                                     <option value="5" <?php echo ($_REQUEST['listaObligatoria']==='5')?"selected":"";?>>Opción 5</option> 
                                     <option value="6" <?php echo ($_REQUEST['listaObligatoria']==='6')?"selected":"";?>>Opción 6</option> 
                                  </select>
+                                <br>
+                                <label for="ficheroObligatorio">Fichero obligatorio<span style="color:red">*</span>:</label>
+                                <input id="ficheroObligatorio" type="file" name="ficheroObligatorio" value="<?php echo (isset($_REQUEST['ficheroObligatorio']))?$_REQUEST['ficheroObligatorio']:"";?>" >
+        <?php
+                echo (!is_null($aErrores['ficheroObligatorio']))?"<span style=\"color: red\">$aErrores[ficheroObligatorio]</span>":"";
+        ?> 
                         </fieldset>
                         <input id="enviar" type="submit" value="Enviar" name="enviar"/>
-                      
+                        <input id="vaciar" type="reset" value="Vaciar" name="vaciar"/>
                     </form>
                 </div>
                 <footer>
-                <p>
+                <!--<p>
                     Óscar Llamas Parra
                                 <a href="https://github.com/OscarLlaPar/" target="__blank"><img src="../webroot/img/github.png" alt="Github"></img></a>
-                </p>
+                </p>-->
                 <p>
                     DAW 2
                 </p>
