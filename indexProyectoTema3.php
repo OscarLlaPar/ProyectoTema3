@@ -159,6 +159,8 @@ and open the template in the editor.
                 </tr>
                 <tr>
                     <td>Ejercicio 25 — Trabajar en PlantillaFormulario.php mi plantilla para hacer formularios como churros</td>
+                    <td><a href="codigoPHP/ejercicio25.php">Ejecutar</a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio25.php">Código</a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 26 —  Probar la plantilla anterior desarrollando un formulario que recoja la temperatura y la presión atmosférica en una serie de fechas y (cuando

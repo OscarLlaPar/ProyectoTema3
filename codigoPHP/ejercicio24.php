@@ -190,9 +190,9 @@ and open the template in the editor.
                 
                 $aErrores['comentarios']= validacionFormularios::comprobarNoVacio($_REQUEST['comentarios']);
                 
-                /*$aErrores['ciclo']= validacionFormularios::validarElementoEnLista($_REQUEST['ciclo'],$aOpciones=['DAW1','DAW2']);
+                $aErrores['ciclo']= validacionFormularios::validarElementoEnLista($_REQUEST['ciclo'],$aOpciones=['DAW1','DAW2']);
                 
-                $aErrores['modulos']= validacionFormularios::validarElementoEnLista($_REQUEST['modulos'],$aOpciones=[
+                /*$aErrores['modulos']= validacionFormularios::validarElementoEnLista($_REQUEST['modulos'],$aOpciones=[
                     'Entornos de desarrollo',
                     'Sistemas Informáticos',
                     'Programación',
@@ -227,15 +227,15 @@ and open the template in the editor.
                 $aRespuestas['dni'] = $_REQUEST['dni'];
                 $aRespuestas['notamedia'] = $_REQUEST['notamedia'];
                 $aRespuestas['altura'] = $_REQUEST['altura'];
-                $aRespuestas['fechanacimiento'] = $_REQUEST['fechanacimieno'];
+                $aRespuestas['fechanacimiento'] = $_REQUEST['fechanacimiento'];
                 $aRespuestas['telefono'] = $_REQUEST['telefono'];
                 $aRespuestas['codigopostal'] = $_REQUEST['codigopostal'];
                 $aRespuestas['sitioweb'] = $_REQUEST['sitioweb'];
                 $aRespuestas['email'] = $_REQUEST['email'];
                 $aRespuestas['fechahoracomienzo'] = $_REQUEST['fechahoracomienzo'];
                 $aRespuestas['comentarios'] = $_REQUEST['comentarios'];
-                /*$aRespuestas['ciclo'] = $_REQUEST['ciclo'];
-                $aRespuestas['modulos'] = $_REQUEST['modulos'];*/
+                $aRespuestas['ciclo'] = $_REQUEST['ciclo'];
+                /*$aRespuestas['modulos'] = $_REQUEST['modulos'];*/
                 //muestra de valores por pantalla
                 echo "<div class=\"cont\">";
                 echo "<h1 style=\"color:green\">Datos enviados</h1>";
