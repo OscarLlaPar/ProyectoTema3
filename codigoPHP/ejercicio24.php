@@ -239,11 +239,11 @@ and open the template in the editor.
                     'Despliegue de Aplicaciones Web',
                     'Empresa e Iniciativa Emprendedora']);*/
                 //acciones correspondientes en caso de que haya algún error
-                foreach($aErrores as $error){
+                foreach($aErrores as $categoria => $error){
                     //condición de que hay un error
                     if(($error)!=null){
                         //limpieza del campo para cuando vuelva a aparecer el formulario
-                        $_REQUEST[key($error)]="";
+                        $_REQUEST[$categoria]="";
                         $entradaOK=false;
                     }
                 }
@@ -356,7 +356,7 @@ and open the template in the editor.
         ?>
                                 </td> 
                                 <td>
-                                <input id="fechanacimiento" type="date" name="fechanacimiento" value="<?php echo (isset($_REQUEST['fechanacimiento']))?$_REQUEST['fechanacimiento']:"";?>" >
+                                <input id="fechanacimiento" type="text" name="fechanacimiento" value="<?php echo (isset($_REQUEST['fechanacimiento']))?$_REQUEST['fechanacimiento']:"";?>" >
                                 
         <?php
                 echo (!is_null($aErrores['fechanacimiento']))?"<span style=\"color: red\">$aErrores[fechanacimiento]</span>":"";
@@ -374,7 +374,7 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input id="telefono" type="tel" name="telefono" value="<?php echo (isset($_REQUEST['telefono']))?$_REQUEST['telefono']:"";?>" >
+                                        <input id="telefono" type="text" name="telefono" value="<?php echo (isset($_REQUEST['telefono']))?$_REQUEST['telefono']:"";?>" >
         <?php
                 echo (!is_null($aErrores['telefono']))?"<span style=\"color: red\">$aErrores[telefono]</span>":"";
         ?>
@@ -415,7 +415,7 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input id="fechahoracomienzo" type="datetime-local" name="fechahoracomienzo" value="<?php echo (isset($_REQUEST['fechahoracomienzo']))?$_REQUEST['fechahoracomienzo']:"";?>" >
+                                        <input id="fechahoracomienzo" type="text" name="fechahoracomienzo" value="<?php echo (isset($_REQUEST['fechahoracomienzo']))?$_REQUEST['fechahoracomienzo']:"";?>" >
         <?php
                 echo (!is_null($aErrores['fechahoracomienzo']))?"<span style=\"color: red\">$aErrores[fechahoracomienzo]</span>":"";
         ?> 

@@ -93,9 +93,13 @@ and open the template in the editor.
             $entradaOK = true; //Inicialización de la variable que nos indica que todo va bien
             $aErrores = [
                 'alfabeticoObligatorio'=>null,
+                'alfabeticoOpcional'=>null,
                 'alfanumericoObligatorio'=>null,
+                'alfanumericoOpcional'=>null,
                 'dniObligatorio'=>null,
+                'dniOpcional'=>null,
                 'decimalObligatorio'=>null,
+                'decimalOpcional'=>null,
                 'numericoObligatorio'=>null,
                 'fechaObligatorio'=>null,
                 'telefonoObligatorio'=>null,
@@ -112,9 +116,13 @@ and open the template in the editor.
             ];
             $aRespuestas = [
                 'alfabeticoObligatorio'=>null,
+                'alfabeticoOpcional'=>null,
                 'alfanumericoObligatorio'=>null,
+                'alfanumericoOpcional'=>null,
                 'dniObligatorio'=>null,
+                'dniOpcional'=>null,
                 'decimalObligatorio'=>null,
+                'decimalOpcional'=>null,
                 'numericoObligatorio'=>null,
                 'fechaObligatorio'=>null,
                 'telefonoObligatorio'=>null,
@@ -135,11 +143,19 @@ and open the template in the editor.
                 //si no, se queda vacía
                 $aErrores['alfabeticoObligatorio']= validacionFormularios::comprobarAlfabetico($_REQUEST['alfabeticoObligatorio'],30,2,1);
                 
+                $aErrores['alfabeticoOpcional']= validacionFormularios::comprobarAlfabetico($_REQUEST['alfabeticoOpcional'],30,2,0);
+                
                 $aErrores['alfanumericoObligatorio']= validacionFormularios::comprobarAlfanumerico($_REQUEST['alfanumericoObligatorio'],30,2,1);
+                
+                $aErrores['alfanumericoOpcional']= validacionFormularios::comprobarAlfanumerico($_REQUEST['alfanumericoOpcional'],30,2,0);
                 
                 $aErrores['dniObligatorio']= validacionFormularios::validarDni($_REQUEST['dniObligatorio'],1);
                 
+                $aErrores['dniOpcional']= validacionFormularios::validarDni($_REQUEST['dniOpcional'],0);
+                
                 $aErrores['decimalObligatorio']= validacionFormularios::comprobarFloat($_REQUEST['decimalObligatorio'],10,0,1);
+                
+                $aErrores['decimalOpcional']= validacionFormularios::comprobarFloat($_REQUEST['decimalOpcional'],10,0,0);
                 
                 $aErrores['numericoObligatorio']= validacionFormularios::comprobarEntero($_REQUEST['numericoObligatorio'],300,0,1);
                 
@@ -190,9 +206,13 @@ and open the template in the editor.
                 //Tratamiento del formulario
                 //recogida de valores
                 $aRespuestas['alfabeticoObligatorio'] = $_REQUEST['alfabeticoObligatorio'];
+                $aRespuestas['alfabeticoOpcional'] = $_REQUEST['alfabeticoOpcional'];
                 $aRespuestas['alfanumericoObligatorio'] = $_REQUEST['alfanumericoObligatorio'];
+                $aRespuestas['alfanumericoOpcional'] = $_REQUEST['alfanumericoOpcional'];
                 $aRespuestas['dniObligatorio'] = $_REQUEST['dniObligatorio'];
+                $aRespuestas['dniOpcional'] = $_REQUEST['dniOpcional'];
                 $aRespuestas['decimalObligatorio'] = $_REQUEST['decimalObligatorio'];
+                $aRespuestas['decimalOpcional'] = $_REQUEST['decimalOpcional'];
                 $aRespuestas['numericoObligatorio'] = $_REQUEST['numericoObligatorio'];
                 $aRespuestas['fechaObligatorio'] = $_REQUEST['fechanacimieno'];
                 $aRespuestas['telefonoObligatorio'] = $_REQUEST['telefonoObligatorio'];
@@ -209,9 +229,9 @@ and open the template in the editor.
                 echo "<div class=\"cont\">";
                 echo "<h1 style=\"color:green\">Datos enviados</h1>";
                 echo "<table class=\"respuestas\">";
-                foreach($aRespuestas as $alfabeticoObligatorioCampo => $respuesta){
+                foreach($aRespuestas as $nombreCampo => $respuesta){
                     echo "<tr>";
-                    echo "<th>".$alfabeticoObligatorioCampo."</th>";
+                    echo "<th>".$nombreCampo."</th>";
                     echo "<td>".$respuesta."</td>";
                     echo "</tr>";
                 }
@@ -252,6 +272,13 @@ and open the template in the editor.
                 echo (!is_null($aErrores['alfabeticoObligatorio']))?"<span style=\"color: red\">$aErrores[alfabeticoObligatorio]</span>":"";
         ?>              
                                     <br>
+                                    <label for="alfabeticoOpcional">Alfabético opcional:</label>
+                                    <input id="alfabeticoOpcional" type="text" name="alfabeticoOpcional" value="<?php echo (isset($_REQUEST['alfabeticoOpcional']))?$_REQUEST['alfabeticoOpcional']:"";?>" >
+                                
+                                    <?php
+                echo (!is_null($aErrores['alfabeticoObligatorio']))?"<span style=\"color: red\">$aErrores[alfabeticoObligatorio]</span>":"";
+        ?>      
+                                    <br>
                                     <label for="alfanumericoObligatorio">Alfanumérico obligatorio<span style="color:red">*</span>:</label>
                                     <input id="alfanumericoObligatorio" type="text" name="alfanumericoObligatorio" value="<?php echo (isset($_REQUEST['alfanumericoObligatorio']))?$_REQUEST['alfanumericoObligatorio']:"";?>" >
                                    
@@ -259,19 +286,36 @@ and open the template in the editor.
                 echo (!is_null($aErrores['alfanumericoObligatorio']))?"<span style=\"color: red\">$aErrores[alfanumericoObligatorio]</span>":"";
         ?>  
                                     <br>
+                                    <label for="alfanumericoOpcional">Alfanumérico opcional:</label>
+                                    <input id="alfanumericoOpcional" type="text" name="alfanumericoOpcional" value="<?php echo (isset($_REQUEST['alfanumericoOpcional']))?$_REQUEST['alfanumericoOpcional']:"";?>" >
+                                
+        <?php
+                echo (!is_null($aErrores['alfabeticoObligatorio']))?"<span style=\"color: red\">$aErrores[alfabeticoObligatorio]</span>":"";
+        ?>     
+                                    <br>
                                     <label for="dniObligatorio">DNI obligatorio<span style="color:red">*</span>:</label>
                                     <input id="dniObligatorio" type="text" name="dniObligatorio" value="<?php echo (isset($_REQUEST['dniObligatorio']))?$_REQUEST['dniObligatorio']:"";?>" >
                                 
         <?php
                 echo (!is_null($aErrores['dniObligatorio']))?"<span style=\"color: red\">$aErrores[dniObligatorio]</span>":"";
         ?>  
+                                    <br>
+                                    <label for="dniOpcional">DNI opcional:</label>
+                                    <input id="dniOpcional" type="text" name="dniOpcional" value="<?php echo (isset($_REQUEST['dniOpcional']))?$_REQUEST['dniOpcional']:"";?>" >
                                 
-                                    
-                                    
-                                    
+        <?php
+                echo (!is_null($aErrores['dniOpcional']))?"<span style=\"color: red\">$aErrores[dniOpcional]</span>":"";
+        ?>  
                                         <br>
                                         <label for="decimalObligatorio">Decimal obligatorio<span style="color:red">*</span>:</label>
                                         <input id="decimalObligatorio" type="text" name="decimalObligatorio" value="<?php echo (isset($_REQUEST['decimalObligatorio']))?$_REQUEST['decimalObligatorio']:"";?>" >  
+                                          
+        <?php
+                echo (!is_null($aErrores['decimalObligatorio']))?"<span style=\"color: red\">$aErrores[decimalObligatorio]</span>":"";
+        ?>
+                                        <br>
+                                        <label for="decimalOpcional">Decimal opcional:</label>
+                                        <input id="decimalOpcional" type="text" name="decimalOpcional" value="<?php echo (isset($_REQUEST['decimalOpcional']))?$_REQUEST['decimalOpcional']:"";?>" >  
                                           
         <?php
                 echo (!is_null($aErrores['decimalObligatorio']))?"<span style=\"color: red\">$aErrores[decimalObligatorio]</span>":"";
