@@ -101,18 +101,30 @@ and open the template in the editor.
                 'decimalObligatorio'=>null,
                 'decimalOpcional'=>null,
                 'numericoObligatorio'=>null,
+                'numericoOpcional'=>null,
                 'fechaObligatorio'=>null,
+                'fechaOpcional'=>null,
                 'telefonoObligatorio'=>null,
+                'telefonoOpcional'=>null,
                 'codigopostalObligatorio'=>null,
+                'codigopostalOpcional'=>null,
                 'urlObligatorio'=>null,
+                'urlOpcional'=>null,
                 'emailObligatorio'=>null,
+                'emailOpcional'=>null,
                 'fechahoraObligatorio'=>null,
+                'fechahoraOpcional'=>null,
                 'textolargoObligatorio'=>null,
+                'textolargoOpcional'=>null,
                 'radioObligatorio'=>null,
-                'checkboxObligatorio'=>null,
+                'radioOpcional'=>null,
+                /*'checkboxObligatorio'=>null,*/
                 'rangoObligatorio'=>null,
+                'rangoOpcional'=>null,
                 'listaObligatorio'=>null,
-                'ficheroObligatorio'=>null
+                'listaOpcional'=>null,
+                'ficheroObligatorio'=>null,
+                'ficheroOpcional'=>null
             ];
             $aRespuestas = [
                 'alfabeticoObligatorio'=>null,
@@ -124,18 +136,30 @@ and open the template in the editor.
                 'decimalObligatorio'=>null,
                 'decimalOpcional'=>null,
                 'numericoObligatorio'=>null,
+                'numericoOpcional'=>null,
                 'fechaObligatorio'=>null,
+                'fechaOpcional'=>null,
                 'telefonoObligatorio'=>null,
+                'telefonoOpcional'=>null,
                 'codigopostalObligatorio'=>null,
+                'codigopostalOpcional'=>null,
                 'urlObligatorio'=>null,
+                'urlOpcional'=>null,
                 'emailObligatorio'=>null,
+                'emailOpcional'=>null,
                 'fechahoraObligatorio'=>null,
+                'fechahoraOpcional'=>null,
                 'textolargoObligatorio'=>null,
+                'textolargoOpcional'=>null,
                 'radioObligatorio'=>null,
-                'checkboxObligatorio'=>null,
+                'radioOpcional'=>null,
+                /*'checkboxObligatorio'=>null,*/
                 'rangoObligatorio'=>null,
+                'rangoOpcional'=>null,
                 'listaObligatorio'=>null,
-                'ficheroObligatorio'=>null
+                'listaOpcional'=>null,
+                'ficheroObligatorio'=>null,
+                'ficheroOpcional'=>null
             ];
             // Si ya se ha pulsado el boton "Enviar"
             if(!empty($_REQUEST['enviar'])){
@@ -159,15 +183,27 @@ and open the template in the editor.
                 
                 $aErrores['numericoObligatorio']= validacionFormularios::comprobarEntero($_REQUEST['numericoObligatorio'],300,0,1);
                 
+                $aErrores['numericoOpcional']= validacionFormularios::comprobarEntero($_REQUEST['numericoOpcional'],300,0,0);
+                
                 $aErrores['fechaObligatorio']= validacionFormularios::validarFecha($_REQUEST['fechaObligatorio'],'01/01/2200',"01/01/1900",1);
+                
+                $aErrores['fechaOpcional']= validacionFormularios::validarFecha($_REQUEST['fechaOpcional'],'01/01/2200',"01/01/1900",0);
                 
                 $aErrores['telefonoObligatorio']= validacionFormularios::validarTelefono($_REQUEST['telefonoObligatorio'],1);
                 
+                $aErrores['telefonoOpcional']= validacionFormularios::validarTelefono($_REQUEST['telefonoOpcional'],0);
+                
                 $aErrores['codigopostalObligatorio']= validacionFormularios::validarCp($_REQUEST['codigopostalObligatorio'],1);
+                
+                $aErrores['codigopostalOpcional']= validacionFormularios::validarCp($_REQUEST['codigopostalOpcional'],0);
                 
                 $aErrores['urlObligatorio']= validacionFormularios::validarURL($_REQUEST['urlObligatorio'],1);
                 
+                $aErrores['urlOpcional']= validacionFormularios::validarURL($_REQUEST['urlOpcional'],0);
+                
                 $aErrores['emailObligatorio']= validacionFormularios::validarEmail($_REQUEST['emailObligatorio'],1);
+                
+                $aErrores['emailOpcional']= validacionFormularios::validarEmail($_REQUEST['emailOpcional'],0);
                 
                 $aErrores['fechahoraObligatorio']= validacionFormularios::comprobarNoVacio($_REQUEST['fechahoraObligatorio']);
                 
@@ -214,17 +250,30 @@ and open the template in the editor.
                 $aRespuestas['decimalObligatorio'] = $_REQUEST['decimalObligatorio'];
                 $aRespuestas['decimalOpcional'] = $_REQUEST['decimalOpcional'];
                 $aRespuestas['numericoObligatorio'] = $_REQUEST['numericoObligatorio'];
-                $aRespuestas['fechaObligatorio'] = $_REQUEST['fechanacimieno'];
+                $aRespuestas['numericoOpcional'] = $_REQUEST['numericoOpcional'];
+                $aRespuestas['fechaObligatorio'] = $_REQUEST['fechaObligatorio'];
+                $aRespuestas['fechaOpcional'] = $_REQUEST['fechaOpcional'];
                 $aRespuestas['telefonoObligatorio'] = $_REQUEST['telefonoObligatorio'];
+                $aRespuestas['telefonoOpcional'] = $_REQUEST['telefonoOpcional'];
                 $aRespuestas['codigopostalObligatorio'] = $_REQUEST['codigopostalObligatorio'];
+                $aRespuestas['codigopostalOpcional'] = $_REQUEST['codigopostalOpcional'];
                 $aRespuestas['urlObligatorio'] = $_REQUEST['urlObligatorio'];
+                $aRespuestas['urlOpcional'] = $_REQUEST['urlOpcional'];
                 $aRespuestas['emailObligatorio'] = $_REQUEST['emailObligatorio'];
+                $aRespuestas['emailOpcional'] = $_REQUEST['emailOpcional'];
                 $aRespuestas['fechahoraObligatorio'] = $_REQUEST['fechahoraObligatorio'];
+                $aRespuestas['fechahoraOpcional'] = $_REQUEST['fechahoraOpcional'];
                 $aRespuestas['textolargoObligatorio'] = $_REQUEST['textolargoObligatorio'];
+                $aRespuestas['textolargoOpcional'] = $_REQUEST['textolargoOpcional'];
                 $aRespuestas['radioObligatorio'] = $_REQUEST['radioObligatorio'];
+                $aRespuestas['radioOpcional'] = $_REQUEST['radioOpcional'];
                 /*$aRespuestas['checkboxObligatorio'] = $_REQUEST['checkboxObligatorio'];*/
                 $aRespuestas['rangoObligatorio'] = $_REQUEST['rangoObligatorio'];
+                $aRespuestas['rangoOpcional'] = $_REQUEST['rangoOpcional'];
                 $aRespuestas['listaObligatorio'] = $_REQUEST['listaObligatorio'];
+                $aRespuestas['listaOpcional'] = $_REQUEST['listaOpcional'];
+                $aRespuestas['ficheroObligatorio'] = $_REQUEST['ficheroObligatorio'];
+                $aRespuestas['ficheroOpcional'] = $_REQUEST['ficheroOpcional'];
                 //muestra de valores por pantalla
                 echo "<div class=\"cont\">";
                 echo "<h1 style=\"color:green\">Datos enviados</h1>";
@@ -318,7 +367,7 @@ and open the template in the editor.
                                         <input id="decimalOpcional" type="text" name="decimalOpcional" value="<?php echo (isset($_REQUEST['decimalOpcional']))?$_REQUEST['decimalOpcional']:"";?>" >  
                                           
         <?php
-                echo (!is_null($aErrores['decimalObligatorio']))?"<span style=\"color: red\">$aErrores[decimalObligatorio]</span>":"";
+                echo (!is_null($aErrores['decimalOpcional']))?"<span style=\"color: red\">$aErrores[decimalOpcional]</span>":"";
         ?>
                                         <br>
                                         <label for="numericoObligatorio">Numérico obligatorio<span style="color:red">*</span>:</label>       
@@ -328,18 +377,37 @@ and open the template in the editor.
                 echo (!is_null($aErrores['numericoObligatorio']))?"<span style=\"color: red\">$aErrores[numericoObligatorio]</span>":"";
         ?>
                                         <br>
+                                        <label for="numericoOpcional">Numérico opcional:</label>       
+                                        <input id="numericoOpcional" type="text" name="numericoOpcional" value="<?php echo (isset($_REQUEST['numericoOpcional']))?$_REQUEST['numericoOpcional']:"";?>" > 
+                                
+        <?php
+                echo (!is_null($aErrores['numericoOpcional']))?"<span style=\"color: red\">$aErrores[numericoOpcional]</span>":"";
+        ?>
+                                        <br>
                                         <label for="fechaObligatorio">Fecha obligatoria<span style="color:red">*</span>:</label>
                                         <input id="fechaObligatorio" type="text" name="fechaObligatorio" value="<?php echo (isset($_REQUEST['fechaObligatorio']))?$_REQUEST['fechaObligatorio']:"";?>" >
                                 
         <?php
                 echo (!is_null($aErrores['fechaObligatorio']))?"<span style=\"color: red\">$aErrores[fechaObligatorio]</span>":"";
-                ?>                  
-                              
+        ?>                  
                                         <br>
-                                <label for="telefonoObligatorio">Teléfono obligatorio<span style="color:red">*</span>:</label>
-                                <input id="telefonoObligatorio" type="text" name="telefonoObligatorio" value="<?php echo (isset($_REQUEST['telefonoObligatorio']))?$_REQUEST['telefonoObligatorio']:"";?>" >
+                                        <label for="fechaOpcional">Fecha opcional:</label>
+                                        <input id="fechaOpcional" type="text" name="fechaOpcional" value="<?php echo (isset($_REQUEST['fechaOpcional']))?$_REQUEST['fechaOpcional']:"";?>" >
+                                
+        <?php
+                echo (!is_null($aErrores['fechaOpcional']))?"<span style=\"color: red\">$aErrores[fechaOpcional]</span>":"";
+        ?>           
+                                        <br>
+                                    <label for="telefonoObligatorio">Teléfono obligatorio<span style="color:red">*</span>:</label>
+                                    <input id="telefonoObligatorio" type="text" name="telefonoObligatorio" value="<?php echo (isset($_REQUEST['telefonoObligatorio']))?$_REQUEST['telefonoObligatorio']:"";?>" >
         <?php
                 echo (!is_null($aErrores['telefonoObligatorio']))?"<span style=\"color: red\">$aErrores[telefonoObligatorio]</span>":"";
+        ?>
+                                    <br>
+                                    <label for="telefonoOpcional">Teléfono opcional:</label>
+                                    <input id="telefonoOpcional" type="text" name="telefonoOpcional" value="<?php echo (isset($_REQUEST['telefonoOpcional']))?$_REQUEST['telefonoOpcional']:"";?>" >
+        <?php
+                echo (!is_null($aErrores['telefonoOpcional']))?"<span style=\"color: red\">$aErrores[telefonoOpcional]</span>":"";
         ?>
                                 <br>
                                 <label for="codigopostalObligatorio">Código postal obligatorio<span style="color:red">*</span>:</label>
@@ -348,10 +416,22 @@ and open the template in the editor.
                 echo (!is_null($aErrores['codigopostalObligatorio']))?"<span style=\"color: red\">$aErrores[codigopostalObligatorio]</span>":"";
         ?>    
                                 <br>
+                                <label for="codigopostalOpcional">Código postal opcional:</label>
+                                <input id="codigopostalOpcional" type="text" name="codigopostalOpcional" value="<?php echo (isset($_REQUEST['codigopostalOpcional']))?$_REQUEST['codigopostalOpcional']:"";?>" >
+        <?php
+                echo (!is_null($aErrores['codigopostalOpcional']))?"<span style=\"color: red\">$aErrores[codigopostalOpcional]</span>":"";
+        ?>    
+                                <br>
                                 <label for="urlObligatorio">URL obligatoria<span style="color:red">*</span>:</label>
                                 <input id="urlObligatorio" type="text" name="urlObligatorio" value="<?php echo (isset($_REQUEST['urlObligatorio']))?$_REQUEST['urlObligatorio']:"";?>" >
         <?php
                 echo (!is_null($aErrores['urlObligatorio']))?"<span style=\"color: red\">$aErrores[urlObligatorio]</span>":"";
+        ?>   
+                                <br>
+                                <label for="urlOpcional">URL opcional:</label>
+                                <input id="urlOpcional" type="text" name="urlOpcional" value="<?php echo (isset($_REQUEST['urlOpcional']))?$_REQUEST['urlOpcional']:"";?>" >
+        <?php
+                echo (!is_null($aErrores['urlOpcional']))?"<span style=\"color: red\">$aErrores[urlOpcional]</span>":"";
         ?>   
                                 <br>
                                 <label for="emailObligatorio">E-mail obligatorio<span style="color:red">*</span>:</label>
@@ -360,11 +440,29 @@ and open the template in the editor.
                 echo (!is_null($aErrores['emailObligatorio']))?"<span style=\"color: red\">$aErrores[emailObligatorio]</span>":"";
         ?>   
                                 <br>
+                                <label for="emailOpcional">E-mail opcional:</label>
+                                <input id="emailOpcional" type="text" name="emailOpcional" value="<?php echo (isset($_REQUEST['emailOpcional']))?$_REQUEST['emailOpcional']:"";?>" >
+        <?php
+                echo (!is_null($aErrores['emailOpcional']))?"<span style=\"color: red\">$aErrores[emailOpcional]</span>":"";
+        ?>   
+                                <br>
                                 <label for="fechahoraObligatorio">Fecha y hora obligatorias<span style="color:red">*</span>:</label>
                                 <input id="fechahoraObligatorio" type="text" name="fechahoraObligatorio" value="<?php echo (isset($_REQUEST['fechahoraObligatorio']))?$_REQUEST['fechahoraObligatorio']:"";?>" >
         <?php
                 echo (!is_null($aErrores['fechahoraObligatorio']))?"<span style=\"color: red\">$aErrores[fechahoraObligatorio]</span>":"";
         ?> 
+                                <br>
+                                <label for="fechahoraOpcional">Fecha y hora opcionales:</label>
+                                <input id="fechahoraOpcional" type="text" name="fechahoraOpcional" value="<?php echo (isset($_REQUEST['fechahoraOpcional']))?$_REQUEST['fechahoraOpcional']:"";?>" >
+                                <br>
+                                <label for="textolargoObligatorio">Texto largo obligatorio<span style="color:red">*</span>:</label>
+                                <textarea id="textolargoObligatorio" name="textolargoObligatorio"><?php echo (isset($_REQUEST['textolargoObligatorio']))?$_REQUEST['textolargoObligatorio']:"";?></textarea>
+        <?php
+                echo (!is_null($aErrores['textolargoObligatorio']))?"<span style=\"color: red\">$aErrores[textolargoObligatorio]</span>":"";
+        ?> 
+                                <br>
+                                <label for="textolargoOpcional">Texto largo opcional:</label>
+                                <textarea id="textolargoOpcional" name="textolargoOpcional"><?php echo (isset($_REQUEST['textolargoOpcional']))?$_REQUEST['textolargoOpcional']:"";?></textarea>
                                 <br>
                                 <label for="radioObligatorio">Radio obligatorio<span style="color:red">*</span>:</label>
                                 <input id="opcion1" type="radio" name="radioObligatorio" value="opcion1" 
@@ -383,28 +481,47 @@ and open the template in the editor.
                 echo (!is_null($aErrores['radioObligatorio']))?"<span style=\"color: red\">$aErrores[radioObligatorio]</span>":"";
         ?>
                                 <br>
-                                <label for="textolargoObligatorio">Texto largo obligatorio<span style="color:red">*</span>:</label>
-                                <textarea id="textolargoObligatorio" name="textolargoObligatorio"><?php echo (isset($_REQUEST['textolargoObligatorio']))?$_REQUEST['textolargoObligatorio']:"";?></textarea>
-        <?php
-                echo (!is_null($aErrores['textolargoObligatorio']))?"<span style=\"color: red\">$aErrores[textolargoObligatorio]</span>":"";
-        ?> 
+                                <label for="radioOpcional">Radio opcional:</label>
+                                <input id="opcion1" type="radio" name="radioOpcional" value="opcion1" 
+                                <?php 
+                                    echo ($_REQUEST['radioOpcional']==='opcion1')?"checked":"";
+                                    
+                                ?>>
+                                <label for="opcion1">Opción 1</label>
                                 
-                                <br>
+                                <input id="opcion2" type="radio" name="radioOpcional" value="opcion2" 
+                                <?php 
+                                    echo ($_REQUEST['radioOpcional']==='opcion2')?"checked":"";
+                                ?>>
+                                <label for="opcion2">Opción 2</label>
         <?php
                 echo (!is_null($aErrores['checkboxObligatorio']))?"<span style=\"color: red\">$aErrores[textolargoObligatorio]</span>":"";
         ?>                            
                                 <br>
                                 <label for="rangoObligatorio">Rango obligatorio<span style="color:red">*</span>:</label>
-                                <input id="rangoObligatorio" type="range" name="rangoObligatorio" max="8" value="<?php echo (isset($_REQUEST['fechahoraObligatorio']))?$_REQUEST['fechahoraObligatorio']:"4";?>">
+                                <input id="rangoObligatorio" type="range" name="rangoObligatorio" max="8" value="<?php echo (isset($_REQUEST['rangoObligatorio']))?$_REQUEST['rangoObligatorio']:"4";?>">
                                 <br>
-                                <label for="listaObligatoria">Lista obligatoria<span style="color:red">*</span>:</label>
-                                <select name="listaObligatoria" value="3">
-                                    <option value="1" <?php echo ($_REQUEST['listaObligatoria']==='1')?"selected":"";?>>Opción 1</option> 
-                                    <option value="2" <?php echo ($_REQUEST['listaObligatoria']==='2')?"selected":"";?>>Opción 2</option> 
-                                    <option value="3" <?php echo ($_REQUEST['listaObligatoria']==='3')?"selected":"";?>>Opción 3</option>
-                                    <option value="4" <?php echo ($_REQUEST['listaObligatoria']==='4')?"selected":"";?>>Opción 4</option> 
-                                    <option value="5" <?php echo ($_REQUEST['listaObligatoria']==='5')?"selected":"";?>>Opción 5</option> 
-                                    <option value="6" <?php echo ($_REQUEST['listaObligatoria']==='6')?"selected":"";?>>Opción 6</option> 
+                                <label for="rangoOpcional">Rango opcional:</label>
+                                <input id="rangoOpcional" type="range" name="rangoOpcional" max="8" value="<?php echo (isset($_REQUEST['rangoOpcional']))?$_REQUEST['rangoOpcional']:"4";?>">
+                                <br>
+                                <label for="listaObligatorio">Lista obligatoria<span style="color:red">*</span>:</label>
+                                <select name="listaObligatorio" value="0">
+                                    <option value="1" <?php echo ($_REQUEST['listaObligatorio']==='1')?"selected":"";?>>Opción 1</option> 
+                                    <option value="2" <?php echo ($_REQUEST['listaObligatorio']==='2')?"selected":"";?>>Opción 2</option> 
+                                    <option value="3" <?php echo ($_REQUEST['listaObligatorio']==='3')?"selected":"";?>>Opción 3</option>
+                                    <option value="4" <?php echo ($_REQUEST['listaObligatorio']==='4')?"selected":"";?>>Opción 4</option> 
+                                    <option value="5" <?php echo ($_REQUEST['listaObligatorio']==='5')?"selected":"";?>>Opción 5</option> 
+                                    <option value="6" <?php echo ($_REQUEST['listaObligatorio']==='6')?"selected":"";?>>Opción 6</option> 
+                                 </select>
+                                <br>
+                                <label for="listaOpcional">Lista opcional:</label>
+                                <select name="listaOpcional" value="0">
+                                    <option value="1" <?php echo ($_REQUEST['listaOpcional']==='1')?"selected":"";?>>Opción 1</option> 
+                                    <option value="2" <?php echo ($_REQUEST['listaOpcional']==='2')?"selected":"";?>>Opción 2</option> 
+                                    <option value="3" <?php echo ($_REQUEST['listaOpcional']==='3')?"selected":"";?>>Opción 3</option>
+                                    <option value="4" <?php echo ($_REQUEST['listaOpcional']==='4')?"selected":"";?>>Opción 4</option> 
+                                    <option value="5" <?php echo ($_REQUEST['listaOpcional']==='5')?"selected":"";?>>Opción 5</option> 
+                                    <option value="6" <?php echo ($_REQUEST['listaOpcional']==='6')?"selected":"";?>>Opción 6</option> 
                                  </select>
                                 <br>
                                 <label for="ficheroObligatorio">Fichero obligatorio<span style="color:red">*</span>:</label>
@@ -412,6 +529,9 @@ and open the template in the editor.
         <?php
                 echo (!is_null($aErrores['ficheroObligatorio']))?"<span style=\"color: red\">$aErrores[ficheroObligatorio]</span>":"";
         ?> 
+                                <br>
+                                <label for="ficheroOpcional">Fichero opcional:</label>
+                                <input id="ficheroOpcional" type="file" name="ficheroOpcional" value="<?php echo (isset($_REQUEST['ficheroOpcional']))?$_REQUEST['ficheroOpcional']:"";?>" >
                         </fieldset>
                         <input id="enviar" type="submit" value="Enviar" name="enviar"/>
                         <input id="vaciar" type="reset" value="Vaciar" name="vaciar"/>
