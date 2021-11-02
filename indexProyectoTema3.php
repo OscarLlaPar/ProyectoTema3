@@ -11,18 +11,17 @@ and open the template in the editor.
         <link href="webroot/css/estilos.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-            <div class="titulo">
+            <header>
                 <h1>Desarrollo Web en Entorno Servidor</h1>
                 <h2>Tema 3</h2>
                 <div class="cuadro" id="arriba"></div>
-            </div>
-        <div class="big">
-        <div class="cont">
+            </header>
+        <main>
             <table>
                 <tr>
                     <td>Ejercicio 0 — Hola mundo y phpinfo()</td>
-                    <td><a href="codigoPHP/ejercicio00.php">Ejecutar</a></td>
-                    <td><a href="mostrarcodigo/muestraEjercicio00.php">Código</a></td>
+                    <td><a href="codigoPHP/ejercicio00.php"><img src="webroot/img/iconoPlay.png"></a></td>
+                    <td><a href="mostrarcodigo/muestraEjercicio00.php"><img src="webroot/img/iconoMostrar.png"></a></td>
                 </tr>
                 <tr>
                     <td>Ejercicio 1 — Inicializar variables de los distintos tipos de datos básicos (string, int, float, bool) y mostrar los datos por pantalla</td>
@@ -106,8 +105,6 @@ and open the template in the editor.
                 </tr>
             </table>
             
-        </div>
-        <div class="cont2">
             <table>
                 
                 <tr>
@@ -170,10 +167,8 @@ and open the template in the editor.
                     </td>
                 </tr>
             </table>
-        </div>	
-        </div>
-    </body>
-    <footer>
+        </main>
+        <footer>
         <p>
             Óscar Llamas Parra
 			<a href="https://github.com/OscarLlaPar/" target="__blank"><img src="webroot/img/github.png" alt="Github"></img></a>
@@ -186,4 +181,6 @@ and open the template in the editor.
         </p>
         <div class="cuadro" id="abajo"></div>
     </footer>
+    </body>
+    
 </html>
