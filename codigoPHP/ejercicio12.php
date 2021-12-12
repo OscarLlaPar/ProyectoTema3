@@ -21,8 +21,12 @@
             /*
             * Ejercicio 12
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 22/10/2021
             */
+            /*Las variables superglobales son arrays asociativos que se pueden mostrar
+            recorriendolas con "foreach" o usando "print_r"
+             */
             echo "<h2>Usando foreach</h2>";
             echo "<h3>Variable \$_SERVER</h3>";
             echo "<table>";
@@ -72,9 +76,15 @@
                 echo "</tr>";
             }
             echo "</table>";
+            
             echo "<h2>Usando print_r()</h2>";
             echo "<pre>";
             print_r($_SERVER);
+            print_r($_COOKIE);
+            print_r($_FILES);
+            print_r($_SESSION);
+            print_r($_REQUEST);
+            print_r($_ENV);
             echo "</pre>";
             
         ?>

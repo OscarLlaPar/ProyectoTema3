@@ -14,6 +14,7 @@ and open the template in the editor.
             /*
             * Ejercicio 23
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 21/10/2021
             */
             //Inicialización de variables
@@ -44,6 +45,7 @@ and open the template in the editor.
             else{
                 $entradaOK=false;
             }
+            // Si todo está bien
             if($entradaOK){
                 //Tratamiento del formulario
                 //recogida de valores
@@ -54,6 +56,7 @@ and open the template in the editor.
                 echo "<p>Nombre: $nombre</p>";
                 echo "<p>Altura: $altura</p>";
             }
+            // Si hay algún error o es la primera vez
             else{
         ?>
                 <h1>Formulario del ejercicio 23</h1>

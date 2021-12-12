@@ -10,9 +10,10 @@
             /*
             * Ejercicio 03
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 22/10/2021
             */
-            //Modo 1
+        
             $oFechaHoraActual = new DateTime(); //objeto de la fecha
             $oZona = new DateTimeZone("Europe/Madrid"); //objeto que establece la zona horaria
             $oFechaHoraActual->setTimezone($oZona); //asignación de la zona a la fecha

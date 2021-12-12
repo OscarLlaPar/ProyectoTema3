@@ -9,6 +9,7 @@
             /*
             * Ejercicio 14
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 21/10/2021
             */
             //inculsión de la librería externa de funciones

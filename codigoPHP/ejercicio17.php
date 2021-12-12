@@ -30,6 +30,7 @@ and open the template in the editor.
             /*
             * Ejercicio 17
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 27/10/2021
             */
             //declaración e inicialización del array
@@ -60,10 +61,10 @@ and open the template in the editor.
             //tabla para ver datos
             echo "<table>";
             //uso del bucle foreach para mostrar el array
-            foreach($aDistribucionButacas as $fila){
+            foreach($aDistribucionButacas as $fila){//recorrido de cada fila
                 echo "<tr>";
                 echo "<th>$contadorFilas</th>";
-                foreach($fila as $persona){
+                foreach($fila as $persona){//recorrido de cada celda de la fila
                     echo "<td>$persona</td>";
                 }
                 

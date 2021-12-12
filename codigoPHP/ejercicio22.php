@@ -9,14 +9,18 @@
             /*
             * Ejercicio 22
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 22/10/2021
             */
-        
+            //si se ha pulsado el botón "enviar"
             if(!empty($_REQUEST['enviar'])){    
+                //recogida de los datos a través de $_REQUEST
                 $nombre = $_REQUEST['nombre'];
                 $altura = $_REQUEST['altura'];
+                //mostrado de los datos
                 echo "<p>Nombre: $nombre</p>";
                 echo "<p>Altura: $altura</p>";
+                //mostrado del contenido de $_REQUEST, $_GET (debería estar vacío) y $_POST
                 echo "<pre>";
                 echo "<p>El contenido de \$_REQUEST es: </p>";
                 print_r($_REQUEST);

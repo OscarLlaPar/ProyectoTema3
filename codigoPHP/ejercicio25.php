@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -113,13 +108,14 @@ and open the template in the editor.
             /*
             * Ejercicio 25
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 21/10/2021
             */
-            //Inicialización de variables
+            //Incluir la librería de validación
             include "../core/210322ValidacionFormularios.php";
             //Inicialización de variables
             $entradaOK = true; //Inicialización de la variable que nos indica que todo va bien
-            $aErrores = [
+            $aErrores = [ //Posibles mensajes de error
                 'alfabeticoObligatorio'=>null,
                 'alfabeticoOpcional'=>null,
                 'alfanumericoObligatorio'=>null,
@@ -154,7 +150,7 @@ and open the template in the editor.
                 'ficheroObligatorio'=>null,
                 'ficheroOpcional'=>null
             ];
-            $aRespuestas = [
+            $aRespuestas = [ //Variable que almacenará las respuestas cuando sean válidas
                 'alfabeticoObligatorio'=>null,
                 'alfabeticoOpcional'=>null,
                 'alfanumericoObligatorio'=>null,

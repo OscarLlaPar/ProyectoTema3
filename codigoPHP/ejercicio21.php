@@ -1,3 +1,12 @@
+<?php
+    /*
+    * Ejercicio 21
+    * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+    * @version 1.0
+    * Última modificación: 21/10/2021
+    */
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,13 +26,6 @@
             </div>
             <input type="submit" name="enviar" value="Enviar">
         </form>
-        <?php
-        /*
-            * Ejercicio 21
-            * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
-            * Última modificación: 21/10/2021
-            */
         
-        ?>
     </body>
 </html>

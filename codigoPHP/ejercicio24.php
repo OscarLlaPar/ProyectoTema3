@@ -136,6 +136,7 @@ and open the template in the editor.
             /*
             * Ejercicio 24
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 27/10/2021
             */
             /*
@@ -159,6 +160,7 @@ and open the template in the editor.
              * texto muy largo
              * fichero
                          */
+            //Incluir la librería de validación
             include "../core/210322ValidacionFormularios.php";
             //Inicialización de variables
             $entradaOK = true; //Inicialización de la variable que nos indica que todo va bien
@@ -313,21 +315,21 @@ and open the template in the editor.
                                     <td><label for="dni">DNI<span style="color:red">*</span>:</label></td>
                                 </tr>
                                 <tr>
-                                <td><input id="nombre" type="text" name="nombre" value="<?php echo (isset($_REQUEST['nombre']))?$_REQUEST['nombre']:"";?>" >
+                                <td><input id="nombre" type="text" name="nombre" placeholder="Nombre (solo letras)" value="<?php echo (isset($_REQUEST['nombre']))?$_REQUEST['nombre']:"";?>" >
                                 
                                     <?php
                 echo (!is_null($aErrores['nombre']))?"<span style=\"color: red\">$aErrores[nombre]</span>":"";
         ?>              
                                
                                 </td>
-                                <td><input id="nick" type="text" name="nick" value="<?php echo (isset($_REQUEST['nick']))?$_REQUEST['nick']:"";?>" >
+                                <td><input id="nick" type="text" name="nick" placeholder="Nick (alfanumérico)" value="<?php echo (isset($_REQUEST['nick']))?$_REQUEST['nick']:"";?>" >
                                    
         <?php
                 echo (!is_null($aErrores['nick']))?"<span style=\"color: red\">$aErrores[nick]</span>":"";
         ?>  
                                 </td> 
                                 <td>
-                                <input id="dni" type="text" name="dni" value="<?php echo (isset($_REQUEST['dni']))?$_REQUEST['dni']:"";?>" >
+                                <input id="dni" type="text" name="dni" placeholder="Ej: 12345678Z" value="<?php echo (isset($_REQUEST['dni']))?$_REQUEST['dni']:"";?>" >
                                 
         <?php
                 echo (!is_null($aErrores['dni']))?"<span style=\"color: red\">$aErrores[dni]</span>":"";
@@ -341,7 +343,7 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input id="notamedia" type="text" name="notamedia" value="<?php echo (isset($_REQUEST['notamedia']))?$_REQUEST['notamedia']:"";?>" >  
+                                        <input id="notamedia" type="text" name="notamedia" placeholder="Del 0 al 10" value="<?php echo (isset($_REQUEST['notamedia']))?$_REQUEST['notamedia']:"";?>" >  
                                           
         <?php
                 echo (!is_null($aErrores['notamedia']))?"<span style=\"color: red\">$aErrores[notamedia]</span>":"";
@@ -349,14 +351,14 @@ and open the template in the editor.
                                 </td>  
                                     <td>
                                 
-                                <input id="altura" type="text" name="altura" value="<?php echo (isset($_REQUEST['altura']))?$_REQUEST['altura']:"";?>" > 
+                                <input id="altura" type="text" name="altura" placeholder="Altura (cm)" value="<?php echo (isset($_REQUEST['altura']))?$_REQUEST['altura']:"";?>" > 
                                 
         <?php
                 echo (!is_null($aErrores['altura']))?"<span style=\"color: red\">$aErrores[altura]</span>":"";
         ?>
                                 </td> 
                                 <td>
-                                <input id="fechanacimiento" type="text" name="fechanacimiento" value="<?php echo (isset($_REQUEST['fechanacimiento']))?$_REQUEST['fechanacimiento']:"";?>" >
+                                <input id="fechanacimiento" type="text" name="fechanacimiento" placeholder="dd/mm/aaaa" value="<?php echo (isset($_REQUEST['fechanacimiento']))?$_REQUEST['fechanacimiento']:"";?>" >
                                 
         <?php
                 echo (!is_null($aErrores['fechanacimiento']))?"<span style=\"color: red\">$aErrores[fechanacimiento]</span>":"";
@@ -374,13 +376,13 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input id="telefono" type="text" name="telefono" value="<?php echo (isset($_REQUEST['telefono']))?$_REQUEST['telefono']:"";?>" >
+                                        <input id="telefono" type="text" name="telefono" placeholder="6######## ó 7########" value="<?php echo (isset($_REQUEST['telefono']))?$_REQUEST['telefono']:"";?>" >
         <?php
                 echo (!is_null($aErrores['telefono']))?"<span style=\"color: red\">$aErrores[telefono]</span>":"";
         ?>
                                     </td>
                                     <td>
-                                        <input id="codigopostal" type="text" name="codigopostal" value="<?php echo (isset($_REQUEST['codigopostal']))?$_REQUEST['codigopostal']:"";?>" >
+                                        <input id="codigopostal" type="text" name="codigopostal" placeholder="Existente en España" value="<?php echo (isset($_REQUEST['codigopostal']))?$_REQUEST['codigopostal']:"";?>" >
         <?php
                 echo (!is_null($aErrores['codigopostal']))?"<span style=\"color: red\">$aErrores[codigopostal]</span>":"";
         ?>    
@@ -392,13 +394,13 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input id="sitioweb" type="text" name="sitioweb" value="<?php echo (isset($_REQUEST['sitioweb']))?$_REQUEST['sitioweb']:"";?>" >
+                                        <input id="sitioweb" type="text" name="sitioweb" placeholder="http(s)://..." value="<?php echo (isset($_REQUEST['sitioweb']))?$_REQUEST['sitioweb']:"";?>" >
         <?php
                 echo (!is_null($aErrores['sitioweb']))?"<span style=\"color: red\">$aErrores[sitioweb]</span>":"";
         ?>   
                                     </td>
                                     <td>
-                                        <input id="email" type="text" name="email" value="<?php echo (isset($_REQUEST['email']))?$_REQUEST['email']:"";?>" >
+                                        <input id="email" type="text" name="email" placeholder="Ej: nombre@mail.com" value="<?php echo (isset($_REQUEST['email']))?$_REQUEST['email']:"";?>" >
         <?php
                 echo (!is_null($aErrores['email']))?"<span style=\"color: red\">$aErrores[email]</span>":"";
         ?>   
@@ -415,7 +417,7 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input id="fechahoracomienzo" type="text" name="fechahoracomienzo" value="<?php echo (isset($_REQUEST['fechahoracomienzo']))?$_REQUEST['fechahoracomienzo']:"";?>" >
+                                        <input id="fechahoracomienzo" type="text" name="fechahoracomienzo" placeholder="dd/mm/aaaa hh:mm" value="<?php echo (isset($_REQUEST['fechahoracomienzo']))?$_REQUEST['fechahoracomienzo']:"";?>" >
         <?php
                 echo (!is_null($aErrores['fechahoracomienzo']))?"<span style=\"color: red\">$aErrores[fechahoracomienzo]</span>":"";
         ?> 
@@ -445,7 +447,7 @@ and open the template in the editor.
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <textarea id="comentarios" name="comentarios" cols="80" rows="5"><?php echo (isset($_REQUEST['comentarios']))?$_REQUEST['comentarios']:"";?></textarea>
+                                        <textarea id="comentarios" name="comentarios" cols="80" rows="5" placeholder="Escribir texto..."><?php echo (isset($_REQUEST['comentarios']))?$_REQUEST['comentarios']:"";?></textarea>
         <?php
                 echo (!is_null($aErrores['comentarios']))?"<span style=\"color: red\">$aErrores[comentarios]</span>":"";
         ?> 
@@ -462,8 +464,8 @@ and open the template in the editor.
                 </div>
                 <footer>
                 <p>
-                    Óscar Llamas Parra
-                                <a href="https://github.com/OscarLlaPar/" target="__blank"><img src="../webroot/img/github.png" alt="Github"></img></a>
+                    <a href="https://daw214.ieslossauces.es/">Óscar Llamas Parra</a>
+                    <a href="https://github.com/OscarLlaPar/" target="__blank"><img src="../webroot/img/github.png" alt="Github"></img></a>
                 </p>
                 <p>
                     DAW 2
