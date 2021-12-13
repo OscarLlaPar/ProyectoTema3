@@ -10,6 +10,7 @@
             /*
             * Ejercicio 07
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 19/10/2021
             */
             /*El valor se encuentra en la variable (array) superglobal $_SERVER[].

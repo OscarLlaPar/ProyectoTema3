@@ -10,8 +10,10 @@
             /*
             * Ejercicio 02
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 19/10/2021
             */
+            //Inicializar cadena con "heredoc", permite escribirla en varias líneas
             $cadena=<<<micadena
                     SELECT name, price, warranty_available, exclusive_offer
                     FROM Products

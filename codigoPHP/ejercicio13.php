@@ -9,6 +9,7 @@
             /*
             * Ejercicio 13
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 25/10/2021
             */
             session_start();  //inicia una sesión

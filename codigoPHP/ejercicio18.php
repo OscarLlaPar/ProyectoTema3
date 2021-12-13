@@ -30,8 +30,10 @@ and open the template in the editor.
             /*
             * Ejercicio 22
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 27/10/2021
             */
+            //declaración e inicialización del array
             $aDistribucionButacas=[
                 'fila1'=>[" "," ","Piqué"," "," "," "," ","Puig","Pedri","de Jong"," "," "," ","Braithwaite"," "],
                 'fila2'=>["Courtois"," "," ","Alaba"," ","Mendy"," "," "," "," "," ","Benzema"," ","Vinicius"," "],
@@ -55,16 +57,18 @@ and open the template in the editor.
                 'fila20'=>["Bono","Navas"," ","Koundé"," "," "," "," "," ","Guidelj","Munir"," "," "," "," "]
             ];
             echo "<h1>Usando funciones</h1>";
+            //colocar el puntero al principio del array (no realmente necesario en este caso, ya que es la primera vez que se recorre)
             reset($aDistribucionButacas);
+            //tabla para ver datos
             echo "<table>";
-            do{
+            do{//recorrido de cada fila
                 echo "<tr>";
                 echo "<th>".key($aDistribucionButacas)."</th>";
-                do{
+                do{//recorrido de cada celda de la fila
                     echo "<td>".current($aDistribucionButacas[key($aDistribucionButacas)])."</td>";
-                }while (next($aDistribucionButacas[key($aDistribucionButacas)]));
+                }while (next($aDistribucionButacas[key($aDistribucionButacas)])); //mientras haya celdas
                 echo "</tr>";
-            }while(next($aDistribucionButacas));
+            }while(next($aDistribucionButacas)); //mientras haya filas
             echo "</table>";
         ?>
     </body>

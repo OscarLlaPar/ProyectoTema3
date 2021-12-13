@@ -25,6 +25,7 @@ and open the template in the editor.
             /*
             * Ejercicio 15
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 21/10/2021
             */
             //declaración e inicialización del array

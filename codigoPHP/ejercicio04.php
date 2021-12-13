@@ -10,6 +10,7 @@
             /*
             * Ejercicio 04
             * @author Óscar Llamas Parra - oscar.llapar@educa.jcyl.es - https://github.com/OscarLlaPar
+            * @version 1.0
             * Última modificación: 22/10/2021
             */
             //cambio de locales a portugués de Portugal
